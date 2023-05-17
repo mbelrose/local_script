@@ -1,4 +1,4 @@
-#!
+#! /usr/bin/zsh
 cd $windows_home/Videos/videos_to_move
 echo 'Enter video id:'
 read video_url
