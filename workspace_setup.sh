@@ -43,7 +43,7 @@ do
 # -------
 
 # start stage server
-if ! docker ps | grep $stage_container_name;
+if !  curl -s $stage_server_url --output /dev/null;
 then
         docker compose up -d
 fi
@@ -53,7 +53,7 @@ stage_container_loop_counter=0
 while [[ $stage_container_loop_counter -le $timeout ]]
 do
         sleep 1
-        if docker ps | grep $stage_container_name; 
+        if  curl -s $stage_server_url --output /dev/null;
         then
                 # open stage server in firefox
                 firefox -private -url $stage_server_url >/dev/null 2>/dev/null
