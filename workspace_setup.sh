@@ -115,7 +115,7 @@ done
 
 # miscellaneous: open notes and a command prompt
 gnome-terminal --working-directory $working_directory
-xed '$windows_home/Downloads/webdev_symfony_notes20180924a.txt' >/dev/null 2>/dev/null &
+xed $windows_home/Downloads/webdev_symfony_notes20180924a.txt >/dev/null 2>/dev/null &
 code --unity-launch $working_directory >/dev/null 2>/dev/null &
 
 # lofi synthwave
