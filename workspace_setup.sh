@@ -1,4 +1,5 @@
-#! /usr/bin/zsh
+#!
+
 # DATABASE_PASSWORD=swordfish
 # gnome-terminal --working-directory $working_directory -- node $server_script
 # gnome-terminal --working-directory $working_directory -- npm start

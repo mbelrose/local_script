@@ -1,4 +1,4 @@
-#! /usr/bin/zsh
+#!
 # docker run -d --name libreddit -p 8180:8080 libreddit/libreddit &
 
 timeout=60
