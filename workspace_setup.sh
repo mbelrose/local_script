@@ -1,4 +1,4 @@
-#!
+#!/usr/bin/zsh
 
 # DATABASE_PASSWORD=swordfish
 # gnome-terminal --working-directory $working_directory -- node $server_script
@@ -8,6 +8,7 @@
 # lofi original jfKfPfyJRdk
 
 # setup parameters
+windows_home='/media/mint/Local Disk/Users/user.DESKTOP-6UBKKRI'
 working_directory=$HOME/webdev_repositories_personal/firstreact_ts/
 mongo_dev_compose=$HOME/webdev_repositories_personal/mongo_dev/mongo_dev_compose.yml
 mongo_container_name=mongo_dev
