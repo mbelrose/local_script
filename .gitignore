@@ -1,0 +1,5 @@
+*.ps1
+resources/*
+icons/*
+feral_services_rutorrent_restart.sh
+keys/feral_git.ppk
