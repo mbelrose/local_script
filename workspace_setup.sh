@@ -54,7 +54,7 @@ do
 done
 
 # start mongo server
-if ! docker ps | grep $mongo_container_name >/dev/null 2>/dev/null;
+if ! docker ps | grep $mongo_container_name;
 then
         docker compose -f $mongo_dev_compose up -d
 fi
@@ -64,7 +64,7 @@ mongo_loop_counter=0
 while [[ $mongo_loop_counter -le $timeout ]]
 do
         sleep 1
-        if docker ps | grep $mongo_container_name >/dev/null 2>/dev/null;
+        if docker ps | grep $mongo_container_name;
         then
 
 
