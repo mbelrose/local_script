@@ -73,7 +73,7 @@ do
                 #start dev environment
                 if ! curl -s $dev_server_url --output /dev/null;
                 then
-                        gnome-terminal --working-directory $working_directory -- npm run dev
+                        nohup gnome-terminal --working-directory $working_directory -- npm run dev  >/dev/null 2>/dev/null &
                 fi
 
                 # wait for dev environment to start
