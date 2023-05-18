@@ -1,10 +1,10 @@
-#!
+#!/usr/bin/zsh
 # docker run -d --name libreddit -p 8180:8080 libreddit/libreddit &
 
 timeout=60
 
 # initialize firefox so further calls don't fork processes
-firefox -private >/dev/null 2>/dev/null &
+nohup firefox -private >/dev/null 2>/dev/null &
 
 # start docker
 if ! systemctl is-active --quiet docker;
@@ -33,10 +33,10 @@ libreddit_loop_counter=0
 while [[ $libreddit_loop_counter -le $timeout ]]
 do
         sleep 1
-        if docker ps | grep libreddit; 
+        if docker ps | grep libreddit;
         then
         
-                firefox -private "http://127.0.0.1:8180/settings/restore/?theme=laserwave&front_page=popular&layout=compact&wide=off&post_sort=top&comment_sort=top&show_nsfw=off&blur_nsfw=off&use_hls=on&hide_hls_notification=off&subscriptions=&filters=" >/dev/null 2>/dev/null
+                nohup firefox -private "http://127.0.0.1:8180/settings/restore/?theme=laserwave&front_page=popular&layout=compact&wide=off&post_sort=top&comment_sort=top&show_nsfw=off&blur_nsfw=off&use_hls=on&hide_hls_notification=off&subscriptions=&filters=" >/dev/null 2>/dev/null &
                 break
         fi
         ((libreddit_loop_counter++))
