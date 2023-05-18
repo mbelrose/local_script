@@ -56,7 +56,7 @@ do
 done
 
 # start mongo server
-if ! docker ps | grep $mongo_container_name;
+if ! docker ps | grep $mongo_container_name >/dev/null 2>/dev/null;
 then
         docker compose -f $mongo_dev_compose up -d
 fi
@@ -66,7 +66,7 @@ mongo_loop_counter=0
 while [[ $mongo_loop_counter -le $timeout ]]
 do
         sleep 1
-        if docker ps | grep $mongo_container_name;
+        if docker ps | grep $mongo_container_name >/dev/null 2>/dev/null;
         then
 
 
@@ -107,7 +107,7 @@ done
 
 
 # miscellaneous: open notes and a command prompt
-gnome-terminal --working-directory $working_directory
+nohup gnome-terminal --working-directory $working_directory >/dev/null 2>/dev/null &
 nohup xed $windows_home/Downloads/webdev_symfony_notes20180924a.txt >/dev/null 2>/dev/null &
 nohup code --unity-launch $working_directory >/dev/null 2>/dev/null &
 
