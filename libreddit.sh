@@ -3,7 +3,7 @@
 
 timeout=60
 
-server_url="http://localhost:8180/"
+server_url="http://127.0.0.1:8180/"
 settings_url="settings/restore/?theme=laserwave&front_page=popular&layout=compact&wide=off&post_sort=top&comment_sort=top&show_nsfw=off&blur_nsfw=off&use_hls=on&hide_hls_notification=off&subscriptions=&filters="
 
 
