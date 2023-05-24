@@ -1,4 +1,4 @@
-#!
+#!/usr/bin/zsh
 
 # prompt the user to run discord
 if zenity --question --text="Do you want to run Discord?"; then
