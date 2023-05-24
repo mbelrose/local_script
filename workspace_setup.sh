@@ -109,5 +109,8 @@ nohup gnome-terminal --working-directory $working_directory >/dev/null 2>/dev/nu
 nohup xed $windows_home/Downloads/webdev_symfony_notes20180924a.txt >/dev/null 2>/dev/null &
 nohup code-insiders --unity-launch $working_directory >/dev/null 2>/dev/null &
 
-# lofi synthwave
-nohup vlc `yt-dlp -f "best[height<=480]"  --user-agent 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36' --referer 'https://www.youtube.com/' -g 'https://www.youtube.com/watch?v=MVPTGNGiI-4'` >/dev/null 2>/dev/null &
+# Prompt user to play music
+if zenity --question --text="Do you want to play music?"; then
+  nohup vlc `yt-dlp -f "best[height<=480]"  --user-agent 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36' --referer 'https://www.youtube.com/' -g 'https://www.youtube.com/watch?v=MVPTGNGiI-4'` >/dev/null 2>/dev/null &
+fi
+
