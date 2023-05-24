@@ -9,3 +9,6 @@ fi
 if zenity --question --text="Do you want to run Google Voice?"; then
     nohup chromium https://voice.google.com/ >/dev/null 2>/dev/null &
 fi
+
+# clear thumbnails
+trash-put /home/mint/.cache/thumbnails/
