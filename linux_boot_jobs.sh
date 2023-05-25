@@ -12,3 +12,6 @@ fi
 
 # clear thumbnails
 trash-put /home/mint/.cache/thumbnails/
+
+
+nohup sleep 120 && /usr/bin/variety --profile /home/mint/.config/variety/ >/dev/null 2>/dev/null &
