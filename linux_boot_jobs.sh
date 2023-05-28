@@ -2,7 +2,7 @@
 
 # prompt the user to run discord
 if zenity --question --text="Do you want to run Discord?"; then
-    nohup firefox -private -start-debugger-server -url https://discord.com/channels/@me >/dev/null 2>/dev/null &
+    nohup firefox -url https://discord.com/channels/@me >/dev/null 2>/dev/null &
 fi
 
 # prompt the user to run google voice
