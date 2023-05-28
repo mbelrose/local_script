@@ -2,7 +2,7 @@
 
 # prompt the user to run discord
 if zenity --question --text="Do you want to run Discord?"; then
-    nohup /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=discord com.discordapp.Discord >/dev/null 2>/dev/null &
+    nohup chromium https://discord.com/channels/@me >/dev/null 2>/dev/null &
 fi
 
 # prompt the user to run google voice
