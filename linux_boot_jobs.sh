@@ -2,12 +2,12 @@
 
 # prompt the user to run discord
 if zenity --question --text="Do you want to run Discord?"; then
-    nohup chromium https://discord.com/channels/@me >/dev/null 2>/dev/null &
+    nohup sleep 30 && chromium https://discord.com/channels/@me >/dev/null 2>/dev/null &
 fi
 
 # prompt the user to run google voice
 if zenity --question --text="Do you want to run Google Voice?"; then
-    nohup chromium https://voice.google.com/ >/dev/null 2>/dev/null &
+    nohup sleep 60 && chromium https://voice.google.com/ >/dev/null 2>/dev/null &
 fi
 
 # clear thumbnails
