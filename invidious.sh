@@ -2,7 +2,8 @@
 
 timeout=60
 working_directory=$HOME/.local/bin/invidious/
-invidious_server_url="http://127.0.0.1:3300/"
+invidious_server_url="http://127.0.0.1:3300/feed/popular"
+settings="?autoplay=1&continue=0&quality=medium&related_videos=false&comments=false&volume=2&dark_mode=true"
 
 # initialize firefox so further calls don't fork processes
 nohup firefox -private >/dev/null 2>/dev/null &
@@ -41,7 +42,7 @@ do
         if  curl -s $invidious_server_url --output /dev/null;
         then
                 # open invidious server in firefox
-                firefox -private -url $invidious_server_url >/dev/null 2>/dev/null
+                firefox -private -url $invidious_server_url${settings} >/dev/null 2>/dev/null
                 break
         fi
         ((invidious_container_loop_counter++))
