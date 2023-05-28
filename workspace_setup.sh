@@ -18,7 +18,7 @@ cd $working_directory
 # start docker
 if ! systemctl is-active --quiet docker;
 then 
-        systemctl start docker
+        sudo systemctl start docker
 fi
 
 # wait for docker to start

@@ -13,7 +13,7 @@ nohup firefox -private >/dev/null 2>/dev/null &
 # start docker
 if ! systemctl is-active --quiet docker;
 then 
-        systemctl start docker
+        sudo systemctl start docker
 fi
 
 # wait for docker to start
