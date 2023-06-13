@@ -2,9 +2,10 @@ resources/*
 icons/*
 feral_services_rutorrent_restart.sh
 keys/feral_git.ppk
-twitch_alert.html
-twitch_alert.sh
 md5_fitgirl.ps1
-.gitignore
 misc/android_vlc_alias_.bashrc
 misc/android_streamlink_config
+feral_rutorrent.ps1
+feral_rclone.ps1
+twitch_alert.html
+twitch_alert.sh
