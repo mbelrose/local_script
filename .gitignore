@@ -1,11 +1,14 @@
+# binaries
 resources/*
 icons/*
+
+# passwords
+keys/*
+
+# misc files that have no reason to be in the repo
 feral_services_rutorrent_restart.sh
-keys/feral_git.ppk
 md5_fitgirl.ps1
-misc/android_vlc_alias_.bashrc
-misc/android_streamlink_config
-feral_rutorrent.ps1
-feral_rclone.ps1
+
+#temporary
 twitch_alert.html
 twitch_alert.sh
