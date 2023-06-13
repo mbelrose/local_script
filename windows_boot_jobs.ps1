@@ -1,5 +1,5 @@
 # break reminder
-&  'C:\Users\user.DESKTOP-6UBKKRI\Documents\local_script\break_reminder.ps1'
+start powershell 'C:\Users\user.DESKTOP-6UBKKRI\Documents\local_script\break_reminder.ps1'
 
 # Google Voice
 Start-Sleep -Seconds 20

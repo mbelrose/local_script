@@ -1,8 +1,12 @@
-Add-Type -AssemblyName System.Windows.Forms
 
-$breakDuration = 45 * 60
+#might need to Install-Module -Name BurntToast
 
+$breakDuration = 2700
+# 45 minutes
+
+echo "Break Reminder"
 while ($true) {
-    [System.Windows.Forms.MessageBox]::Show("Break time", "Reminder", [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Information)
     Start-Sleep -Seconds $breakDuration
+    New-BurntToastNotification -Text 'Break Reminder'  -SnoozeAndDismiss 
 }
+
