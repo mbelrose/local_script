@@ -1,0 +1,2 @@
+password=$(cat '/media/mint/Local Disk/Users/user.DESKTOP-6UBKKRI/Documents/local_script/keys/feral_rutorrent_password.txt')
+/usr/bin/firefox -private https://mbelrose:Breadoil1@phanes.feralhosting.com/mbelrose/rutorrent/
