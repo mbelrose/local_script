@@ -5,6 +5,3 @@ icons/*
 # passwords
 keys/*
 
-# misc files that have no reason to be in the repo
-feral_services_rutorrent_restart.sh
-md5_fitgirl.ps1
