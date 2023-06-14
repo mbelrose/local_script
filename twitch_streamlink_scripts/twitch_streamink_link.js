@@ -20,7 +20,7 @@
         videoLinks.forEach(link => {
             // Create a custom protocol URL with the streamer name as the last part of the URL
             const streamerName = link.href.split('/')[3];
-            const customProtocolUrl = `myprotocol://${streamerName}`;
+            const customProtocolUrl = `x-streamlink://https://www.twitch.tv/${streamerName}`;
 
             // Create a hyperlink for the custom protocol URL
             const customProtocolLink = document.createElement('a');
