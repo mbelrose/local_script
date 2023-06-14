@@ -15,10 +15,6 @@
 
     // Loop through the video links and add a star next to each one
     videoLinks.forEach(link => {
-        const star = document.createElement('span');
-        star.innerHTML = ' &#9733;';
-        link.parentNode.insertBefore(star, link.nextSibling);
-
         // Create a custom protocol URL with the streamer name as the last part of the URL
         const streamerName = link.href.split('/')[3];
         const customProtocolUrl = `myprotocol://${streamerName}`;
