@@ -23,6 +23,6 @@
         const customProtocolLink = document.createElement('a');
         customProtocolLink.href = customProtocolUrl;
         customProtocolLink.innerHTML = '&#9733;';
-        link.parentNode.insertBefore(customProtocolLink, link.nextSibling.nextSibling);
+        link.parentNode.insertBefore(customProtocolLink, link.nextSibling);
     });
 })();
