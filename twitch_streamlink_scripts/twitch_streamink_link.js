@@ -3,7 +3,7 @@
 // @namespace    twitch-video-links-custom-protocol-handler
 // @version      1
 // @description  Adds a streamlink custom protocol link after videos on Twitch 
-// @match        https://www.twitch.tv/*
+// @match        https://*.twitch.tv/*
 // @grant        none
 // ==/UserScript==
 
