@@ -15,7 +15,7 @@ function move_window() {
     )
 
     # move the window
-    while read -r window_id; do
+    while echo "$window_list" | read -r window_id; do
         if [ ${#window_id} -gt 0 ]
         then
             loop_counter=0
@@ -30,6 +30,6 @@ function move_window() {
                 ((loop_counter++))
             done
         fi
-    done <<< "$window_list"
+    done
 
 }
