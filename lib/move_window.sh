@@ -15,7 +15,7 @@ function move_window() {
     )
 
     # move the window
-    while echo "$window_list" | read -r window_id; do
+    while IFS= read -r window_id; do
         if [ ${#window_id} -gt 0 ]
         then
             current_desktop=-1
@@ -31,6 +31,6 @@ function move_window() {
                 ((loop_counter++))
             done
         fi
-    done
+    done <<< "$window_list"
 
 }
