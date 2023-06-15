@@ -45,5 +45,8 @@ fi
 trash-put /home/mint/.cache/thumbnails/ \
     >/dev/null 2>/dev/null &
 
+# switch to main desktop in case got pulled
+wmctrl -s 0
+
 # change wallpaper
 /usr/bin/variety --profile /home/mint/.config/variety/
