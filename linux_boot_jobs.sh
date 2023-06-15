@@ -17,7 +17,6 @@ function move_window_to_desktop() {
     done <<< "$window_list"
 }
 
-
 zenity --question --text="Do you want to run Discord?"
 discord=$?
 zenity --question --text="Do you want to run Google Voice?"
@@ -55,8 +54,9 @@ if [ $google_voice -eq 0 ]; then
 fi
 
 # clear thumbnails
-trash-put /home/mint/.cache/thumbnails/
+trash-put /home/mint/.cache/thumbnails/ \
+    >/dev/null 2>/dev/null &
 
 # change wallpaper
 /usr/bin/variety --profile /home/mint/.config/variety/ \
->/dev/null 2>/dev/null &
+    >/dev/null 2>/dev/null &
