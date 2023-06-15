@@ -7,8 +7,6 @@ WORKING_DIRECTORY=$HOME/webdev_repositories_personal/twitch_live_alert
 # import move window function
 source $LIB_DIRECTORY/move_window.sh
 
-zenity --question --text="Do you want to run Discord?"
-discord=$?
 zenity --question --text="Do you want to run Google Voice?"
 google_voice=$?
 zenity --question --text="Do you want to run Twitch Alerts?"
@@ -28,11 +26,9 @@ if [ $twitch_alerts -eq 0 ]; then
 fi
 
 # run discord
-if [ $discord -eq 0 ]; then
-    nohup chromium https://discord.com/channels/@me \
-        >/dev/null 2>/dev/null &
-    move_window "Discord" 1
-fi
+nohup chromium https://discord.com/channels/@me \
+    >/dev/null 2>/dev/null &
+move_window "Discord" 1
 
 # run google voice
 if [ $google_voice -eq 0 ]; then
