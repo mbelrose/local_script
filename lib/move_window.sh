@@ -18,6 +18,7 @@ function move_window() {
     while echo "$window_list" | read -r window_id; do
         if [ ${#window_id} -gt 0 ]
         then
+            current_desktop=-1
             loop_counter=0
             while [ "$desktop_number" -ne "$current_desktop" ] \
                 && [ "$loop_counter" -le "$LOOP_LIMIT" ]
