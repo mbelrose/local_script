@@ -16,10 +16,7 @@ function move_window() {
         'BEGIN {IGNORECASE=1} $0 ~ title { print $1 }' \
         <<< "$window_list")
     while read -r window_id; do
-        if echo "$window_id" | grep -q '^[0-9x]\+$'
-        then
-            wmctrl -ir "$window_id" -t "$desktop_number"
-        fi
+        wmctrl -ir "$window_id" -t "$desktop_number"
     done <<< "$window_list"
 }
 
@@ -31,17 +28,14 @@ zenity --question --text="Do you want to run Twitch Alerts?"
 twitch_alerts=$?
 
 # break reminder
-nohup gnome-terminal --title "Break Reminder" \
-    -- $windows_home/Documents/local_script/break_reminder.sh \
-    >/dev/null 2>/dev/null &
+gnome-terminal --title "Break Reminder" \
+    -- $windows_home/Documents/local_script/break_reminder.sh
 
 # run twitch alerts
 if [ $twitch_alerts -eq 0 ]; then
-    nohup gnome-terminal --title "Twitch Live Alert" \
+    gnome-terminal --title "Twitch Live Alert" \
         --working-directory $working_directory \
-        -- node server/TwitchLiveAlert.js  \
-        >/dev/null 2>/dev/null &
-    
+        -- node server/TwitchLiveAlert.js
 fi
 
 # run discord
