@@ -16,7 +16,10 @@ function move_window() {
         'BEGIN {IGNORECASE=1} $0 ~ title { print $1 }' \
         <<< "$window_list")
     while read -r window_id; do
-        wmctrl -ir "$window_id" -t "$desktop_number"
+        if echo "$window_id" | grep -q '^[0-9x]\+$'
+        then
+            wmctrl -ir "$window_id" -t "$desktop_number"
+        fi
     done <<< "$window_list"
 }
 
