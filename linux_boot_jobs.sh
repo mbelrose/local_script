@@ -16,7 +16,10 @@ function move_window() {
         grep '^[[:alnum:]]\+$' <<< "$window_list" \
     )
     while read -r window_id; do
-        wmctrl -ir "$window_id" -t "$desktop_number"
+        if [ ! -z "$window_id" ]
+        then
+            wmctrl -ir "$window_id" -t "$desktop_number"
+        fi
     done <<< "$window_list"
 }
 
