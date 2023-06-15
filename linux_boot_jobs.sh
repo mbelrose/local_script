@@ -1,27 +1,11 @@
 #!/usr/bin/zsh
 
+# import move window function
+source lib/move_window.sh
+
 windows_home='/media/mint/Local Disk/Users/user.DESKTOP-6UBKKRI'
 working_directory=$HOME/webdev_repositories_personal/twitch_live_alert
 
-# move a window to a different desktop
-function move_window() {
-    local window_title=$1
-    local desktop_number=$2
-    window_list=$(wmctrl -l)
-    window_list=$(
-        awk -v title="$window_title" \
-        'BEGIN {IGNORECASE=1} $0 ~ title { print $1 }' \
-        <<< "$window_list")
-    window_list=$( \
-        grep '^[[:alnum:]]\+$' <<< "$window_list" \
-    )
-    while read -r window_id; do
-        if [ ! -z "$window_id" ]
-        then
-            wmctrl -ir "$window_id" -t "$desktop_number"
-        fi
-    done <<< "$window_list"
-}
 
 zenity --question --text="Do you want to run Discord?"
 discord=$?
