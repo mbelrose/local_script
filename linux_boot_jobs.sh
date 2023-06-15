@@ -39,6 +39,5 @@ fi
 trash-put /home/mint/.cache/thumbnails/
 
 # change wallpaper
-sleep 120 \
-&& /usr/bin/variety --profile /home/mint/.config/variety/ \
+/usr/bin/variety --profile /home/mint/.config/variety/ \
 >/dev/null 2>/dev/null &
