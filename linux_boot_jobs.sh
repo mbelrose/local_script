@@ -9,7 +9,7 @@ function move_window() {
     local desktop_number=$2
     window_list=$(wmctrl -l)
     if [[ $(echo "$window_list" | wc -l) -lt 1 ]]; then
-        return 1
+        return 0
     fi
     window_list=$(
         awk -v title="$window_title" \
