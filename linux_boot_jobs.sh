@@ -60,7 +60,7 @@ trash-put /home/mint/.cache/thumbnails/ \
     >/dev/null 2>/dev/null &
 
 # sleep because weird timing issue on wmctrl
-sleep 15 \
+sleep 5 \
     && move_window "Voice" 1 \
     && move_window "Discord" 1 \
     && move_window "Twitch Live Alert" 1 \
