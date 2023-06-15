@@ -16,17 +16,18 @@ function move_window() {
 
     # move the window
     while read -r window_id; do
-        if [ ! -z "$window_id" ]
+        if [ ${#window_id} -gt 0 ]
         then
             throttle=0
-            while [[ "$desktop_number" != "$current_desktop" \
-                && $throttle < 60 ]]
+            while [[ $desktop_number ne $current_desktop \
+                && $throttle -le 60 ]]
             do
+                sleep 1
                 wmctrl -ir "$window_id" -t "$desktop_number"
                 current_desktop=$(wmctrl -lG \
                     | awk -v id="$window_id" \
                     '$1 == id { print $2 }')
-                throttle=$((throttle + 1))
+                ((throttle++))
             done
         fi
     done <<< "$window_list"
