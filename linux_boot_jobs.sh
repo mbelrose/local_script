@@ -1,11 +1,11 @@
 #!/usr/bin/zsh
 
+WINDOWS_HOME='/media/mint/Local Disk/Users/user.DESKTOP-6UBKKRI'
+LIB_DIRECTORY=$WINDOWS_HOME/Documents/local_script/lib
+WORKING_DIRECTORY=$HOME/webdev_repositories_personal/twitch_live_alert
+
 # import move window function
-source lib/move_window.sh
-
-windows_home='/media/mint/Local Disk/Users/user.DESKTOP-6UBKKRI'
-working_directory=$HOME/webdev_repositories_personal/twitch_live_alert
-
+source $LIB_DIRECTORY/move_window.sh
 
 zenity --question --text="Do you want to run Discord?"
 discord=$?
@@ -16,12 +16,12 @@ twitch_alerts=$?
 
 # break reminder
 gnome-terminal --title "Break Reminder" \
-    -- $windows_home/Documents/local_script/break_reminder.sh
+    -- $WINDOWS_HOME/Documents/local_script/break_reminder.sh
 
 # run twitch alerts
 if [ $twitch_alerts -eq 0 ]; then
     gnome-terminal --title "Twitch Live Alert" \
-        --working-directory $working_directory \
+        --working-directory $WORKING_DIRECTORY \
         -- node server/TwitchLiveAlert.js
 fi
 
