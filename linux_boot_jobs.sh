@@ -62,13 +62,12 @@ fi
 trash-put /home/mint/.cache/thumbnails/ \
     >/dev/null 2>/dev/null &
 
-sleep 10 \
+# sleep because weird timing issue on wmctrl
+sleep 15 \
     && move_window "Voice" 1 \
     && move_window "Discord" 1 \
     && move_window "Twitch Live Alert" 1 \
     && move_window "Break Reminder" 1
 
 # change wallpaper
-sleep 120 \ 
-    && /usr/bin/variety --profile /home/mint/.config/variety/ \
-    >/dev/null 2>/dev/null &
+/usr/bin/variety --profile /home/mint/.config/variety/
