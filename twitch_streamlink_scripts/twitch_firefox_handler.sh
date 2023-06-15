@@ -24,3 +24,5 @@ nohup gnome-terminal -- echo '11' >/dev/null 2>/dev/null &
 # MimeType=x-scheme-handler/ext+streamlink
 
 # xdg-mime default twitch_firefox_handler.desktop x-scheme-handler/ext+streamlink
+
+# echo 'text/x-streamlink=twitch_firefox_handler.desktop' >> ~/.local/share/mime/packages/foo.xml && update-mime-database ~/.local/share/mime/
