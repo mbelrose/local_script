@@ -19,7 +19,7 @@ function move_window() {
         if [ ${#window_id} -gt 0 ]
         then
             throttle=0
-            while [[ $desktop_number ne $current_desktop \
+            while [[ $desktop_number -ne $current_desktop \
                 && $throttle -le 60 ]]
             do
                 sleep 1
