@@ -17,38 +17,33 @@ twitch_alerts=$?
 # break reminder
 gnome-terminal --title "Break Reminder" \
     -- $WINDOWS_HOME/Documents/local_script/break_reminder.sh
+move_window "Break Reminder" 1
 
 # run twitch alerts
 if [ $twitch_alerts -eq 0 ]; then
     gnome-terminal --title "Twitch Live Alert" \
         --working-directory $WORKING_DIRECTORY \
         -- node server/TwitchLiveAlert.js
+    move_window "Twitch Live Alert" 1
 fi
 
 # run discord
 if [ $discord -eq 0 ]; then
     nohup chromium https://discord.com/channels/@me \
         >/dev/null 2>/dev/null &
-    
+    move_window "Discord" 1
 fi
 
 # run google voice
 if [ $google_voice -eq 0 ]; then
     nohup chromium https://voice.google.com/ \
         >/dev/null 2>/dev/null &
-    
+    move_window "Voice" 1
 fi
 
 # clear thumbnails
 trash-put /home/mint/.cache/thumbnails/ \
     >/dev/null 2>/dev/null &
-
-# sleep because weird timing issue on wmctrl
-sleep 5 \
-    ; move_window "Voice" 1 \
-    ; move_window "Discord" 1 \
-    ; move_window "Twitch Live Alert" 1 \
-    ; move_window "Break Reminder" 1
 
 # change wallpaper
 /usr/bin/variety --profile /home/mint/.config/variety/
