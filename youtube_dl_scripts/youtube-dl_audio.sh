@@ -7,4 +7,6 @@ platform_config
 
 echo 'Enter video id:'
 read video_url
-yt-dlp -x --exec vlc $video_url
+yt-dlp -x \
+    --exec $PLAYER_COMMAND \
+    $video_url

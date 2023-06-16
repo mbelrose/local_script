@@ -5,6 +5,7 @@ source "$LIBRARY_DIR/platform_config.sh"
 
 platform_config
 
-echo 'Enter stream id:'
-read stream_url
-vlc `yt-dlp -f "best[height<=1080]" -g $stream_url`
+echo 'Enter video id:'
+read video_url
+
+$PLAYER_COMMAND `yt-dlp -f "best[height<=1080]" -g $stream_url`

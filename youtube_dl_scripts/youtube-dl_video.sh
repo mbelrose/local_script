@@ -7,6 +7,6 @@ platform_config
 
 echo 'Enter video id:'
 read video_url
-yt-dlp -f "best[height<=1080]" --exec vlc $video_url
-
-
+yt-dlp -f "best[height<=1080]" \
+    --exec $PLAYER_COMMAND \
+    $video_url
