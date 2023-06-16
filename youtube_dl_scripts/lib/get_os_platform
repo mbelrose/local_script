@@ -1,0 +1,18 @@
+function is_desktop_platform {
+    if [[ "$(uname -a)" == *"Linux "* ]]
+    then
+        echo true
+    elif [[ "$(uname -a)" == *"Android "* ]]
+    then
+        echo false
+    fi
+}
+
+function is_android_platform {
+    if [[ "$(uname -a)" == *"Android "* ]]
+    then
+        echo true
+    else
+        echo false
+    fi
+}
