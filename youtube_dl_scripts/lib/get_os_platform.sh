@@ -1,6 +1,7 @@
 function is_desktop {
-    if [[ "$(uname -a)" == *"Linux "* ]]
+    if [[ "$(uname -a)" =~ Linux$ ]]
     then
+    echo "desktop"
         true
     else
         false
@@ -8,7 +9,7 @@ function is_desktop {
 }
 
 function is_android {
-    if [[ "$(uname -a)" == *"Android "* ]]
+    if [[ "$(uname -a)" =~ Android$ ]]
     then
         true
     else
