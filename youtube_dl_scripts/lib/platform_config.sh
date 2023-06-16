@@ -1,3 +1,4 @@
+# TODO: doesn't work on android
 function platform_config {
     if is_android
     then
