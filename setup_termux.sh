@@ -1,5 +1,6 @@
 pkg upgrade
 termux-setup-storage
+pkg install termux-api
 pkg install openssh
 pkg install git
 pkg install p7zip
