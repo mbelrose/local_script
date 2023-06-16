@@ -6,6 +6,6 @@ source "$LIBRARY_DIR/platform_config.sh"
 platform_config
 
 echo 'Enter video id:'
-read video_url
+read stream_url
 
 $PLAYER_COMMAND `yt-dlp -x -g $stream_url`

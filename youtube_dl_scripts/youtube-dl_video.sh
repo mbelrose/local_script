@@ -6,7 +6,7 @@ source "$LIBRARY_DIR/platform_config.sh"
 platform_config
 
 echo 'Enter video id:'
-read video_url
+read stream_url
 yt-dlp -f "best[height<=1080]" \
     --exec $PLAYER_COMMAND \
-    $video_url
+    $stream_url
