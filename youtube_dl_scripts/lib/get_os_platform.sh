@@ -1,18 +1,17 @@
 function is_desktop {
     if [[ "$(uname -a)" =~ Linux$ ]]
     then
-    echo "desktop"
-        true
+        return 0
     else
-        false
+        return 1
     fi
 }
 
 function is_android {
     if [[ "$(uname -a)" =~ Android$ ]]
     then
-        true
+        return 0
     else
-        false
+        return 1
     fi
 }
