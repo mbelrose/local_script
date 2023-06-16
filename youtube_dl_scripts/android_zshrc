@@ -1,1 +1,0 @@
-alias vlc='am start -n org.videolan.vlc/org.videolan.vlc.gui.video.VideoPlayerActivity -a android.intent.action.VIEW -d'
