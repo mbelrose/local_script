@@ -16,4 +16,4 @@ fi
 
 echo 'Enter video id:'
 read video_url
-yt-dlp -f "best[height<=1080]" --exec vlc $video_url
+yt-dlp -exec vlc $video_url
