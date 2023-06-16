@@ -1,9 +1,9 @@
 #!/usr/bin/zsh
 
 LIBRARY_DIR="$( dirname -- $0)/lib"
-source "$LIBRARY_DIR/set_directory.sh"
+source "$LIBRARY_DIR/platform_config.sh"
 
-set_directory
+platform_config
 
 echo 'Enter video id:'
 read video_url

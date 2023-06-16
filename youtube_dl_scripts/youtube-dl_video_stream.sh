@@ -1,8 +1,9 @@
 #!/usr/bin/zsh
-LIBRARY_DIR="$( dirname -- $0)/lib"
-source "$LIBRARY_DIR/set_directory.sh"
 
-set_directory
+LIBRARY_DIR="$( dirname -- $0)/lib"
+source "$LIBRARY_DIR/platform_config.sh"
+
+platform_config
 
 echo 'Enter stream id:'
 read stream_url
