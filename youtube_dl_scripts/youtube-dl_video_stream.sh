@@ -16,4 +16,4 @@ fi
 
 echo 'Enter stream id:'
 read stream_url
-vlc `yt-dlp -g $stream_url`
+vlc `yt-dlp -f "best[height<=1080]" -g $stream_url`
