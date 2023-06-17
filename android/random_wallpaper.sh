@@ -37,4 +37,4 @@ temp_file="$OUTPUT_DIR/$safe_random_image_$(date +%Y-%m-%d_%H-%M-%S).jpg"
 curl -s "$photo_url" -o "$temp_file"
 
 # Set the wallpaper in Android
-adb push "$random_image" /sdcard/wallpaper.jpg
+termux-wallpaper -f "$temp_file"
