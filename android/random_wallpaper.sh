@@ -29,10 +29,10 @@ fi
 
 # Pick a random image from a random file in the directory
 random_file=$(find "$OUTPUT_DIR" -type f | shuf -n 1)
-random_line_count=$(jq ".photos.pages |length -1 " "$random_file")
+random_line_count=$(jq ".photos.photo |length -1 " "$random_file")
 # because jq is 0 indexed
 random_line_index=$(shuf -i 0-"$random_line_count" -n 1)
-random_line=$(jq ".photos.pages[$random_line_index]" "$random_file")
+random_line=$(jq ".photos.photo[$random_line_index]" "$random_file")
 random_image=$(echo "$random_line" | jq -r '.id')
 random_image_name=$(echo "$random_line" | jq -r '.title')
 photo_url="https://live.staticflickr.com/$(echo "$random_line" | jq -r '.server')/$(echo "$random_line" | jq -r '.id')_$(echo "$random_line" | jq -r '.secret').jpg"
