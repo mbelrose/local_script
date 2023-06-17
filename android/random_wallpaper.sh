@@ -27,7 +27,7 @@ random_file=$(find "$OUTPUT_DIR" -type f | shuf -n 1)
 random_line=$(shuf -n 1 "$random_file")
 random_image=$(echo "$random_line" | cut -d ' ' -f 1)
 
-photo_url=$(echo "$curl_output" / 
+photo_url=$(echo "$random_image" / 
     | jq -r '.photos.photo[].url_o' | shuf -n 1)
 
 # Download the photo to the directory
