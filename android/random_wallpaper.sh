@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# might need pkg install jq
+
 # Set the directory name
 HOME_DIR='/data/data/com.termux/files/home'
 DIR_NAME="$HOME_DIR/storage/shared/Pictures/wallpapers"
