@@ -12,6 +12,6 @@ pkg install python
 pkg install zsh
 
 pkg install libxslt
-pkg install streamlink
+pip install streamlink
 pkg install ffmpeg
-pkg install yt-dlp
+pip install yt-dlp
