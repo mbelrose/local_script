@@ -40,7 +40,7 @@ photo_url="https://live.staticflickr.com/$(echo "$random_line" | jq -r '.server'
 # Download the photo to the directory
 # image url shou
 safe_image_name=$(echo "$random_image_name" | tr -c '[:alnum:]._-' '_')
-temp_file="$OUTPUT_DIR/$safe_image_name.jpg"
+temp_file="$DIR_NAME/$safe_image_name.jpg"
 curl -s "$photo_url" -o "$temp_file"
 
 # Set the wallpaper in Android
