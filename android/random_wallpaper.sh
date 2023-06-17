@@ -26,17 +26,21 @@ if [ $# -gt 0 ]; then
     echo "$curl_output" >> "$OUTPUT_DIR/flickr_group_$safe_group_id.txt"
 fi
 
+
 # Pick a random image from a random file in the directory
 random_file=$(find "$OUTPUT_DIR" -type f | shuf -n 1)
-random_line=$(shuf -n 1 "$random_file")
-random_image=$(echo "$random_line" | cut -d ' ' -f 1)
-
-photo_url=$(echo "$random_image" | jq -r '.photos.photo[].url_o' | shuf -n 1)
+random_line_count=$(jq ".photos.pages |length " "$OUTPUT_DIR/$random_file")
+random_line_count="random_line_count - 1" # because jq is 0 indexed
+random_line_index=$(shuf -i 0-"$random_line_count" -n 1)
+random_line=$(jq ".photos.pages[$random_line_index]" "$OUTPUT_DIR/$random_file")
+random_image=$(echo "$random_line" | jq -r '.id')
+random_image_name=$(echo "$random_line" | jq -r '.title')
+photo_url="https://live.staticflickr.com/$(echo "$random_line" | jq -r '.server')/$(echo "$random_line" | jq -r '.id')_$(echo "$random_line" | jq -r '.secret').jpg"
 
 # Download the photo to the directory
 # image url shou
-safe_random_image=$(echo "$random_image" | tr -c '[:alnum:]._-' '_')
-temp_file="$OUTPUT_DIR/$safe_random_image_$(date +%Y-%m-%d_%H-%M-%S).jpg"
+safe_image_name=$(echo "$random_image_name" | tr -c '[:alnum:]._-' '_')
+temp_file="$OUTPUT_DIR/$safe_image_name.jpg"
 curl -s "$photo_url" -o "$temp_file"
 
 # Set the wallpaper in Android
