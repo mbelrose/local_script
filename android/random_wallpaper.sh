@@ -4,9 +4,9 @@
 # put flickr api key in config/.flickr_api_key
 
 # Set the directory name
-HOME_DIR='/data/data/com.termux/files/home'
-DIR_NAME="$HOME_DIR/storage/shared/Pictures/wallpapers"
-INDEX_DIR="$DIR_NAME/indices"
+ROOT_DIR='/data/data/com.termux/files/home'
+HOME_DIR="$ROOT_DIR/storage/shared/Pictures/wallpapers"
+INDEX_DIR="$HOME_DIR/indices"
 SCRIPT_DIR="$( dirname -- $0)"
 API_KEY=$(cat "${SCRIPT_DIR}/config/.flickr_api_key")
 
@@ -39,7 +39,7 @@ photo_url="https://live.staticflickr.com/$(echo "$random_line" | jq -r '.server'
 # Download the photo to the directory
 # image url shou
 safe_image_name=$(echo "$random_image_name" | tr -c '[:alnum:]._-' '_')
-temp_file="$DIR_NAME/$safe_image_name.jpg"
+temp_file="$HOME_DIR/$safe_image_name.jpg"
 curl -s "$photo_url" -o "$temp_file"
 
 # Set the wallpaper in Android
