@@ -31,9 +31,10 @@ photo_url=$(echo "$random_image" /
     | jq -r '.photos.photo[].url_o' | shuf -n 1)
 
 # Download the photo to the directory
-temp_file="$OUTPUT_DIR/$(date +%Y-%m-%d_%H-%M-%S).jpg"
+# image url shou
+safe_random_image=$(echo "$random_image" | tr -c '[:alnum:]._-' '_')
+temp_file="$OUTPUT_DIR/$safe_random_image_$(date +%Y-%m-%d_%H-%M-%S).jpg"
 curl -s "$photo_url" -o "$temp_file"
-
 
 # Set the wallpaper in Android
 adb push "$random_image" /sdcard/wallpaper.jpg
