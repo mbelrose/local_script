@@ -23,14 +23,14 @@ if [ $# -gt 0 ]; then
     curl_output=$(curl -s "https://api.flickr.com/services/rest/?method=flickr.groups.pools.getPhotos&api_key=${API_KEY}&group_id=${group_id}&format=json&nojsoncallback=1")
     # Strip non-filename safe characters
     safe_group_id=$(echo "$group_id" | tr -c '[:alnum:]._-' '_')
-    echo "$curl_output" >> "$OUTPUT_DIR/flickr_group_$safe_group_id.txt"
+    echo "$curl_output" > "$OUTPUT_DIR/flickr_group_$safe_group_id.txt"
 fi
 
 
 # Pick a random image from a random file in the directory
 random_file=$(find "$OUTPUT_DIR" -type f | shuf -n 1)
-random_line_count=$(jq ".photos.pages |length " "$random_file")
-random_line_count="random_line_count - 1" # because jq is 0 indexed
+random_line_count=$(jq ".photos.pages |length -1 " "$random_file")
+# because jq is 0 indexed
 random_line_index=$(shuf -i 0-"$random_line_count" -n 1)
 random_line=$(jq ".photos.pages[$random_line_index]" "$random_file")
 random_image=$(echo "$random_line" | jq -r '.id')
