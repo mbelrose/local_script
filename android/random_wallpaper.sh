@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # might need pkg install jq
+# put flickr api key in config/.flickr_api_key
 
 # Set the directory name
 HOME_DIR='/data/data/com.termux/files/home'
