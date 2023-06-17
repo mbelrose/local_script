@@ -12,6 +12,7 @@ fi
 
 # Get a random photo from a Flickr group
 # if a command line parameter was provided
+# TODO: first time the script runs parameter is not optional
 if [ $# -gt 0 ]; then
     group_id="$1"
     curl_output=$(curl -s /
