@@ -2,6 +2,7 @@
 
 # might need pkg install jq
 # put flickr api key in config/.flickr_api_key
+# TODO: if first run but index fetch doesn't work, error behavior
 
 # Set the directory name
 ROOT_DIR='/data/data/com.termux/files/home'
