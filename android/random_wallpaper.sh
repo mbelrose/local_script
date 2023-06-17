@@ -19,7 +19,7 @@ if [ $# -gt 0 ]; then
         )
     # Strip non-filename safe characters
     safe_group_id=$(echo "$group_id" | tr -c '[:alnum:]._-' '_')
-    echo "$curl_output" >> "$OUTPUT_DIR/$safe_group_id.txt"
+    echo "$curl_output" >> "$OUTPUT_DIR/flickr_group_$safe_group_id.txt"
 fi
 
 # Pick a random image from a random file in the directory
