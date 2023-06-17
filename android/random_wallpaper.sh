@@ -28,6 +28,13 @@ fi
 
 # Pick a random image from a random file in the directory
 random_file=$(find "$INDEX_DIR" -type f | shuf -n 1)
+# Check if the random file is empty
+if [ ! -s "$random_file" ] && [ $# -eq 0 ]; then
+  echo "No indices found"
+  exit 1
+fi
+
+# Check if there are no command line parameters
 random_line_count=$(jq ".photos.photo |length -1 " "$random_file")
 # because jq is 0 indexed
 random_line_index=$(shuf -i 0-"$random_line_count" -n 1)
