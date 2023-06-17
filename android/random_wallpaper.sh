@@ -7,8 +7,8 @@
 HOME_DIR='/data/data/com.termux/files/home'
 DIR_NAME="$HOME_DIR/storage/shared/Pictures/wallpapers"
 OUTPUT_DIR="$DIR_NAME/indices"
-SCRIPT_DIR="$( dirname -- $0)/lib"
-API_KEY='508f5cae87f8b8aefbfb6084d4074a06'
+SCRIPT_DIR="$( dirname -- $0)"
+API_KEY=$(cat "${SCRIPT_DIR}/config/.flickr_api_key")
 
 # Create the directories if they don't exist
 if [ ! -d "$OUTPUT_DIR" ]; then
