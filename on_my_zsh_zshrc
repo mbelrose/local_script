@@ -102,11 +102,19 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-windows_home='/media/mint/Local Disk/Users/user.DESKTOP-6UBKKRI'
+
+# shortuct to the z directory plugin
 alias cd=z
+
+# shortcut to ccat colorized cat
 alias cat=ccat
+
 # chatgpt shell scripter
 # sudo npm install -g @builder.io/ai-shell
+# ai config set OPENAI_KEY=<your token>
 alias clippy=ai
+
+#misc
+WINDOWS_HOME='/media/mint/Local Disk/Users/user.DESKTOP-6UBKKRI'
 alias joke='curl https://icanhazdadjoke.com/ && echo'
 
