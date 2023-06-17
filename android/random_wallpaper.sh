@@ -22,7 +22,7 @@ if [ $# -gt 0 ]; then
     curl_output=$(curl -s "https://api.flickr.com/services/rest/?method=flickr.groups.pools.getPhotos&api_key=${API_KEY}&group_id=${group_id}&format=json&nojsoncallback=1")
     # Strip non-filename safe characters
     safe_group_id=$(echo "$group_id" | tr -c '[:alnum:]._-' '_')
-    echo "$curl_output" > "$INDEX_DIR/flickr_group_$safe_group_id.txt"
+    echo "$curl_output" > "$INDEX_DIR/flickr_group_$safe_group_id.json"
 fi
 
 
