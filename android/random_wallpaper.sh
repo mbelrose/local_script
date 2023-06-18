@@ -8,7 +8,7 @@
 ROOT_DIR='/data/data/com.termux/files/home'
 HOME_DIR="$ROOT_DIR/storage/shared/Pictures/wallpapers"
 INDEX_DIR="$HOME_DIR/indices"
-SCRIPT_DIR="$( dirname -- $BASH_SOURCE)"
+SCRIPT_DIR="$( dirname -- $0)"
 API_KEY=$(cat "${SCRIPT_DIR}/config/.flickr_api_key")
 
 # Create the directories if they don't exist
