@@ -1,6 +1,6 @@
 #!/usr/bin/zsh
 
-LIBRARY_DIR="$( dirname -- $BASH_HOME)/lib"
+LIBRARY_DIR="$( dirname -- $0)/lib"
 source "$LIBRARY_DIR/platform_config.sh"
 
 platform_config
