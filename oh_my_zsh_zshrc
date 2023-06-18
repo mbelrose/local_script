@@ -102,12 +102,17 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# windows shared drive
+WINDOWS_HOME='/media/mint/Local Disk/Users/user.DESKTOP-6UBKKRI'
+
+# opeai api key for gpt_engineer
+OPENAI_API_KEY=$(cat $WINDOWS_HOME/Documents/local_script/keys/openai_api_key)
+
 # chatgpt shell scripter
 # sudo npm install -g @builder.io/ai-shell
 # ai config set OPENAI_KEY=<your token>
 alias clippy=ai
 
 #misc
-WINDOWS_HOME='/media/mint/Local Disk/Users/user.DESKTOP-6UBKKRI'
 alias joke='curl https://icanhazdadjoke.com/ && echo'
 
