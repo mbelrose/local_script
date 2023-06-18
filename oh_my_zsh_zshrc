@@ -102,10 +102,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-
-# shortuct to the z directory plugin
-alias cd=z
-
 # shortcut to ccat colorized cat
 alias cat=ccat
 
