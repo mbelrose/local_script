@@ -26,13 +26,13 @@ if [ $twitch_alerts -eq 0 ]; then
 fi
 
 # run discord
-nohup chromium https://discord.com/channels/@me \
+nohup chromium --new-window https://discord.com/channels/@me \
     >/dev/null 2>/dev/null &
 move_window "Discord" 1
 
 # run google voice
 if [ $google_voice -eq 0 ]; then
-    nohup chromium https://voice.google.com/ \
+    nohup chromium --new-window https://voice.google.com/ \
         >/dev/null 2>/dev/null &
     move_window "Voice" 1
 fi
