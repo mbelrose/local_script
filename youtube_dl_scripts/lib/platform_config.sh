@@ -1,6 +1,7 @@
 # set platform specific variables
+
 function platform_config {
-    if is_android
+    if [[ "$(uname -o)" == 'Android' ]]
     then
         PLAYER_COMMAND='am start -n org.videolan.vlc/org.videolan.vlc.gui.video.VideoPlayerActivity -a android.intent.action.VIEW -d'
         HOME_DIR='/data/data/com.termux/files/home'
