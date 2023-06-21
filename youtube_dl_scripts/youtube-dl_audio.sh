@@ -9,5 +9,5 @@ platform_config
 echo 'Enter video id:'
 read stream_url
 yt-dlp -x \
-    --exec $PLAYER_COMMAND \
+    --exec "$PLAYER_COMMAND" \
     $stream_url
