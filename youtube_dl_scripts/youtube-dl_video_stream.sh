@@ -9,4 +9,4 @@ platform_config
 echo 'Enter video id:'
 read stream_url
 
-$PLAYER_COMMAND `yt-dlp -f "best[height<=1080]" -g $stream_url`
+`$PLAYER_COMMAND $(yt-dlp -f "best[height<=1080]" -g $stream_url)`
