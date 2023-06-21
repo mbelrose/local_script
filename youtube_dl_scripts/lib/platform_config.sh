@@ -1,4 +1,4 @@
-# TODO: doesn't work on android
+# set platform specific variables
 function platform_config {
     if is_android
     then
