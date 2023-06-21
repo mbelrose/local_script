@@ -48,4 +48,5 @@ nohup firefox -private >/dev/null 2>/dev/null &
 wmctrl -s 0
 
 # change wallpaper
-/usr/bin/variety --profile /home/mint/.config/variety/
+nohup /usr/bin/variety --profile /home/mint/.config/variety/ \
+    >/dev/null 2>/dev/null &
