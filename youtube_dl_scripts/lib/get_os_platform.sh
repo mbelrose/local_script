@@ -1,6 +1,6 @@
-# TODO: this might not work at all
+# test if platform is android termux or not
 function is_android {
-    if [[ "$(uname -a)" =~ Android ]]
+    if [[ "$(uname -o)" == 'Android' ]]
     then
         return 0
     else
