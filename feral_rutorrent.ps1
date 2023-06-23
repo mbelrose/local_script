@@ -1,1 +1,1 @@
-  & 'C:\Program Files\Mozilla Firefox\firefox.exe'  -private -URL ('https://mbelrose@phanes.feralhosting.com/mbelrose/rutorrent/')
+  & 'C:\Program Files\Mozilla Firefox\firefox.exe'  -private -URL ('https://phanes.feralhosting.com/mbelrose/rutorrent/')
