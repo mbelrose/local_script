@@ -30,6 +30,15 @@ nohup chromium --new-window https://discord.com/channels/@me \
     >/dev/null 2>/dev/null &
 move_window "Discord" 1
 
+# run elemet for matrix
+nohup /usr/bin/flatpak run \
+    --branch=stable \
+    --arch=x86_64 \
+    --command=/app/bin/element \
+    --file-forwarding \
+    im.riot.Riot @@u %U @@ \
+    >/dev/null 2>/dev/null &
+
 # run google voice
 if [ $google_voice -eq 0 ]; then
     nohup chromium --new-window https://voice.google.com/ \
