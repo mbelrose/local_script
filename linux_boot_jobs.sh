@@ -38,6 +38,7 @@ nohup /usr/bin/flatpak run \
     --file-forwarding \
     im.riot.Riot @@u %U @@ \
     >/dev/null 2>/dev/null &
+move_window "Element" 1
 
 # run google voice
 if [ $google_voice -eq 0 ]; then
