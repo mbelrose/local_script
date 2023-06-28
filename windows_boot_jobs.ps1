@@ -12,4 +12,5 @@ Start-Sleep -Seconds 20
 Start-Sleep -Seconds 20
 & 'C:\Program Files\Google\Chrome\Application\chrome.exe' -new-window "https://discord.com/channels/@me"
 
-
+# Twitch Live Alert
+start powershell 'node \"C:\Program Files (x86)\twitch_live_alert_win\twitch_live_alert\server\TwitchLiveAlert.js\"'
