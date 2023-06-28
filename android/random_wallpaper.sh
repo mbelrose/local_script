@@ -55,4 +55,5 @@ temp_file="$HOME_DIR/$safe_image_name.jpg"
 curl -s "$photo_url" -o "$temp_file"
 
 # Set the wallpaper in Android
+termux-wallpaper -l -f "$temp_file" # lockscreen
 termux-wallpaper -f "$temp_file"
