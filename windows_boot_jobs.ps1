@@ -23,11 +23,5 @@ New-Desktop
 $chrome_processes = Get-Process -Name chrome -ErrorAction SilentlyContinue
 $element_processes = Get-Process -Name Element -ErrorAction SilentlyContinue
 
-# Move the windows to the new desktop
-if ($chrome_processes) {
-    $chrome_processes | ForEach-Object { Move-Window $_.MainWindowHandle (Get-DesktopDesktopId -DesktopNumber 2) }
-}
-
-if ($element_processes) {
-    $element_processes | ForEach-Object { Move-Window $_.MainWindowHandle (Get-DesktopDesktopId -DesktopNumber 2) }
-}
+$chrome_processes | ForEach-Object { Move-Window $_.MainWindowHandle (Get-DesktopDesktopId -DesktopNumber 2) }
+$element_processes | ForEach-Object { Move-Window $_.MainWindowHandle (Get-DesktopDesktopId -DesktopNumber 2) }
