@@ -14,3 +14,20 @@ Start-Sleep -Seconds 20
 
 # Twitch Live Alert
 start powershell 'node \"C:\Program Files (x86)\twitch_live_alert_win\twitch_live_alert\server\TwitchLiveAlert.js\"'
+
+
+# move everything to a second desktop
+New-Desktop
+
+# Get the processes for Chrome and Element
+$chrome_processes = Get-Process -Name chrome -ErrorAction SilentlyContinue
+$element_processes = Get-Process -Name Element -ErrorAction SilentlyContinue
+
+# Move the windows to the new desktop
+if ($chrome_processes) {
+    $chrome_processes | ForEach-Object { Move-Window $_.MainWindowHandle (Get-DesktopDesktopId -DesktopNumber 2) }
+}
+
+if ($element_processes) {
+    $element_processes | ForEach-Object { Move-Window $_.MainWindowHandle (Get-DesktopDesktopId -DesktopNumber 2) }
+}
