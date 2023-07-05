@@ -7,6 +7,6 @@ $breakDuration = 2700
 echo "Break Reminder"
 while ($true) {
     Start-Sleep -Seconds $breakDuration
-    New-BurntToastNotification -Text 'Break Reminder'  -SnoozeAndDismiss 
+    New-BurntToastNotification -Text 'Break Reminder'
 }
 
