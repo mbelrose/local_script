@@ -1,3 +1,6 @@
+# need to run:
+# Install-Module -Name VirtualDesktop
+
 # create a new desktop
 $targetDesktop = New-Desktop -PassThru
 
