@@ -1,9 +1,9 @@
 #!/bin/bash
 
-device_macs=("14:43:19:E5:B5:9F" "1C:96:5A:C5:5C:2C" "3")
+device_macs=("14:43:19:E5:B5:9F" "1C:96:5A:C5:5C:2C")
 # device names must be in the same order as the mac addresses
 # should be alphanumeric
-device_names=("ET1" "Controller" "3")
+device_names=("ET1" "Controller")
 
 # Create a list of buttons for each device after the first
 button_list=""
@@ -39,5 +39,3 @@ else
     bluetoothctl power on
     bluetoothctl connect "${device_macs[$i]}"
 fi
-
-read
