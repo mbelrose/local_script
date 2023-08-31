@@ -107,12 +107,22 @@ WINDOWS_HOME='/media/mint/Local Disk/Users/user.DESKTOP-6UBKKRI'
 
 if [[ "$(uname -o)" == 'Android' ]]
 then
+    # openai api key for gpt_engineer
     export OPENAI_API_KEY=$(cat ~/.keys/openai_api_key)
+
+    # custom termux paths, aliases
+    PATH=$PATH:/data/data/com.termux/files/home/.local/bin
+    alias youtube_video='~/.local/opt/local_script/youtube_dl_scripts/youtube-dl_video.sh'
+    alias alert_twitch='node ~/.local/opt/twitch_live_alert/server/TwitchLiveAlert.js'
+    alias youtube_video_stream='~/.local/opt/local_script/youtube_dl_scripts/youtube-dl_video_stream.sh'
+    alias stream_twitch='echo "enter streamer name" ; read streamer_name ; yt-dlp -f 480p\,480p30 -g "https://twitch.tv/$streamer_name"'
+    alias stream_vod='echo "enter vod id" ; read vod_id ; yt-dlp -f 480p\,480p30 -g "https://twitch.tv/videos/$vod_id"'
+    alias random_wallpaper='~/.local/opt/local_script/android/random_wallpaper.sh'
+    
 else
+    # openai api key for gpt_engineer
     export OPENAI_API_KEY=$(cat $WINDOWS_HOME/Documents/local_script/keys/openai_api_key)
 fi
-
-# opeai api key for gpt_engineer
 
 # chatgpt shell scripter
 # sudo npm install -g @builder.io/ai-shell
