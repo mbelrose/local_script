@@ -105,8 +105,14 @@ source $ZSH/oh-my-zsh.sh
 # windows shared drive
 WINDOWS_HOME='/media/mint/Local Disk/Users/user.DESKTOP-6UBKKRI'
 
+if [[ "$(uname -o)" == 'Android' ]]
+then
+    export OPENAI_API_KEY=$(cat ~/.keys/openai_api_key)
+else
+    export OPENAI_API_KEY=$(cat $WINDOWS_HOME/Documents/local_script/keys/openai_api_key)
+fi
+
 # opeai api key for gpt_engineer
-export OPENAI_API_KEY=$(cat $WINDOWS_HOME/Documents/local_script/keys/openai_api_key)
 
 # chatgpt shell scripter
 # sudo npm install -g @builder.io/ai-shell
