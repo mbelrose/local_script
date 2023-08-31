@@ -25,5 +25,5 @@ git clone https://github.com/mbelrose/local_script.git
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 cp ~/.local/opt/local_script/oh_my_zsh_zshrc ~/.zshrc
 
-# restart shell then run this
+# restart shell then run this for zsh-autosuggestions plugin
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
