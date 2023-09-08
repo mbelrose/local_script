@@ -72,7 +72,7 @@ zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker colorize emoji themes z  zsh-autosuggestions)
+plugins=(git docker colorize themes z  zsh-autosuggestions)
 # maybe need to pip install pygments
 
 # git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
@@ -111,8 +111,6 @@ WINDOWS_HOME='/media/mint/Local Disk/Users/user.DESKTOP-6UBKKRI'
 
 if [[ "$(uname -o)" == 'Android' ]]
 then
-    # openai api key for gpt_engineer
-    export OPENAI_API_KEY=$(cat ~/.keys/openai_api_key)
 
     # custom termux paths, aliases
     PATH=$PATH:/data/data/com.termux/files/home/.local/bin
@@ -124,15 +122,6 @@ then
     alias random_wallpaper='~/.local/opt/local_script/android/random_wallpaper.sh'
     
 else
-    # openai api key for gpt_engineer
-    export OPENAI_API_KEY=$(cat $WINDOWS_HOME/Documents/local_script/keys/openai_api_key)
+    # desktop code here
 fi
-
-# chatgpt shell scripter
-# sudo npm install -g @builder.io/ai-shell
-# ai config set OPENAI_KEY=<your token>
-alias clippy=ai
-
-#misc
-alias joke='curl https://icanhazdadjoke.com/ && echo'
 
