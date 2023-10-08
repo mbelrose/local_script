@@ -18,9 +18,14 @@ if ($google_voice -eq 6) {
 
 # Discord
 Start-Sleep -Seconds 20
-& 'C:\Program Files\Google\Chrome\Application\chrome.exe' -new-window "https://discord.com/channels/@me"
+& 'C:\Users\user.DESKTOP-6UBKKRI\AppData\Local\Discord\Update.exe' --processStart Discord.exe
+
 
 # Twitch Live Alert
 if ($twitch_alerts -eq 6) {
     start powershell 'node \"C:\Program Files (x86)\twitch_live_alert_win\twitch_live_alert\server\TwitchLiveAlert.js\"'
 }
+
+# background wallpaper switcher
+Start-Sleep -Seconds 30
+& "C:\Program Files (x86)\johnsadventures.com\John's Background Switcher\BackgroundSwitcher.exe"
