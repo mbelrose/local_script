@@ -28,7 +28,6 @@ fi
 # run discord
 nohup /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=discord com.discordapp.Discord \
     >/dev/null 2>/dev/null &
-move_window "Discord" 1
 
 # run elemet for matrix
 nohup /usr/bin/flatpak run \
@@ -38,7 +37,6 @@ nohup /usr/bin/flatpak run \
     --file-forwarding \
     im.riot.Riot @@u %U @@ \
     >/dev/null 2>/dev/null &
-move_window "Element" 1
 
 # run google voice
 if [ $google_voice -eq 0 ]; then
