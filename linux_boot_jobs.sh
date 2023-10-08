@@ -26,7 +26,7 @@ if [ $twitch_alerts -eq 0 ]; then
 fi
 
 # run discord
-nohup chromium --new-window https://discord.com/channels/@me \
+nohup /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=discord com.discordapp.Discord \
     >/dev/null 2>/dev/null &
 move_window "Discord" 1
 
