@@ -26,7 +26,7 @@ if [ $twitch_alerts -eq 0 ]; then
 fi
 
 # run discord
-nohup /usr/bin/flatpak run --branch=stable --arch=x86_64 --command=discord com.discordapp.Discord \
+nohup /usr/share/discord/Discord \
     >/dev/null 2>/dev/null &
 move_window "Discord" 1
 move_window "Discord" 1
