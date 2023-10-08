@@ -52,7 +52,7 @@ trash-put /home/mint/.cache/thumbnails/ \
     >/dev/null 2>/dev/null &
 
 # initialize firefox
-nohup firefox -private >/dev/null 2>/dev/null &
+nohup firefox -private-window >/dev/null 2>/dev/null &
 
 # switch to main desktop in case got pulled
 wmctrl -s 0
