@@ -13,7 +13,13 @@ echo 'Enter streamer id:'
 read streamer_id
 streamer_id=$(echo $streamer_id | awk -F/ '{print $NF}')
 streamer_id=$(echo $streamer_id | sed 's/[^[:alnum:]_\?=]//g')
-gnome-terminal --title "Streamlink" \
-    --working-directory $HOME_DIR \
-    -- streamlink https://twitch.tv/$streamer_id
-move_window "Streamlink" 1
+
+if [[ "$(uname -o)" == 'Android' ]]
+then
+    streamlink https://twitch.tv/$streamer_id
+else
+    gnome-terminal --title "Streamlink" \
+        --working-directory $HOME_DIR \
+        -- streamlink https://twitch.tv/$streamer_id
+    move_window "Streamlink" 1
+fi
