@@ -13,7 +13,7 @@ start powershell 'C:\Users\user.DESKTOP-6UBKKRI\Documents\local_script\break_rem
 # Google Voice
 if ($google_voice -eq 6) {
     Start-Sleep -Seconds 20
-    & 'C:\Program Files\Google\Chrome\Application\chrome.exe' -new-window "https://voice.google.com"
+    & 'C:\Program Files\Mozilla Firefox\firefox.exe' -new-window "https://voice.google.com/u/0/messages"
 }
 
 # Discord

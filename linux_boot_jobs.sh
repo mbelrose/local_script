@@ -43,7 +43,7 @@ move_window "Element" 1
 
 # run google voice
 if [ $google_voice -eq 0 ]; then
-    nohup chromium --new-window https://voice.google.com/ \
+    nohup firefox -new-window https://voice.google.com/u/0/messages \
         >/dev/null 2>/dev/null &
     move_window "Voice" 1
 fi
