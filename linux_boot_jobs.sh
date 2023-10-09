@@ -29,7 +29,6 @@ fi
 nohup /usr/share/discord/Discord \
     >/dev/null 2>/dev/null &
 move_window "Discord" 1
-move_window "Discord" 1
 
 # run elemet for matrix
 nohup /usr/bin/flatpak run \
