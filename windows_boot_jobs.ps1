@@ -26,6 +26,13 @@ if ($twitch_alerts -eq 6) {
     start powershell 'node \"C:\Program Files (x86)\twitch_live_alert_win\twitch_live_alert\server\TwitchLiveAlert.js\"'
 }
 
+
+# Firefox
+Start-Sleep -Seconds 20
+& 'C:\Program Files\Mozilla Firefox\firefox.exe' -private-window 
+
+
+
 # background wallpaper switcher
 Start-Sleep -Seconds 30
 & "C:\Program Files (x86)\johnsadventures.com\John's Background Switcher\BackgroundSwitcher.exe"
