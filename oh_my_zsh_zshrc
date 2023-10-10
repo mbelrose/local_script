@@ -124,5 +124,7 @@ then
 else
     # desktop code here
     alias qrclip='xclip -selection c -o | qrencode -t utf8 | xclip -selection c'
+    alias qr='/media/mint/Local Disk/Users/user.DESKTOP-6UBKKRI/Documents/local_script/qr_code.sh'
+    
 fi
 
