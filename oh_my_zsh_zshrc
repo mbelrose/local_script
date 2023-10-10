@@ -109,6 +109,7 @@ source $ZSH/oh-my-zsh.sh
 # windows shared drive
 WINDOWS_HOME='/media/mint/Local Disk/Users/user.DESKTOP-6UBKKRI'
 
+
 if [[ "$(uname -o)" == 'Android' ]]
 then
 
@@ -120,9 +121,16 @@ then
     alias stream_twitch='echo "enter streamer name" ; read streamer_name ; yt-dlp -f 480p\,480p30 -g "https://twitch.tv/$streamer_name"'
     alias stream_vod='echo "enter vod id" ; read vod_id ; yt-dlp -f 480p\,480p30 -g "https://twitch.tv/videos/$vod_id"'
     alias random_wallpaper='~/.local/opt/local_script/android/random_wallpaper.sh'
-    
+
+    # turn clipboard into qr code
+    # needs pkg install libqrencode
+    alias qrclip='termux-clipboard-get | qrencode -t utf8 | termux-clipboard-set'
+    alias qr='~/.local/opt/local_script/qr_code.sh'
+
 else
-    # desktop code here
+
+    # turn clipboard into qr code
+    # needs pkg install libqrencode
     alias qrclip='xclip -selection c -o | qrencode -t utf8 | xclip -selection c'
     alias qr="'/media/mint/Local Disk/Users/user.DESKTOP-6UBKKRI/Documents/local_script/qr_code.sh'"
     

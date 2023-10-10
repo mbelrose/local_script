@@ -12,6 +12,7 @@ pkg install rclone
 pkg install nodejs
 pkg install python
 pkg install zsh
+pkg install libqrencode
 
 pkg install libxslt
 pip install streamlink
