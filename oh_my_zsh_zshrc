@@ -131,7 +131,6 @@ else
 
     # turn clipboard into qr code
     # needs pkg install libqrencode
-    alias qrclip='xclip -selection c -o | qrencode -t utf8 | xclip -selection c'
     alias qr="'/media/mint/Local Disk/Users/user.DESKTOP-6UBKKRI/Documents/local_script/qr_code.sh'"
     
 fi
