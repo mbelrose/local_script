@@ -123,5 +123,6 @@ then
     
 else
     # desktop code here
+    alias qrclip xclip -selection c -o | qrencode -t utf8 | xclip -selection c
 fi
 
