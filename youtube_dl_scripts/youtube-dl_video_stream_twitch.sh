@@ -17,7 +17,7 @@ streamer_id=$(echo $streamer_id | sed 's/[^[:alnum:]_\?=]//g')
 
 if [[ "$(uname -o)" == 'Android' ]]
 then
-    `$PLAYER_COMMAND $(yt-dlp -f "480p,480p30" -g https://twitch.tv/$streamer_id)`
+    /usr/bin/zsh -c "$PLAYER_COMMAND $(yt-dlp -f "480p,480p30" -g https://twitch.tv/$streamer_id)"
 else
     gnome-terminal --title "Streamlink" \
         --working-directory $HOME_DIR \
