@@ -15,20 +15,26 @@ twitch_alerts=$?
 # break reminder
 gnome-terminal --title "Break Reminder" \
     -- $WINDOWS_HOME/Documents/local_script/break_reminder.sh
-move_window "Break Reminder" 1
+nohup move_window "Break Reminder" 1 \
+    >/dev/null 2>/dev/null &
 
 # run twitch alerts
 if [ $twitch_alerts -eq 0 ]; then
     gnome-terminal --title "Twitch Live Alert" \
         --working-directory $WORKING_DIRECTORY \
         -- node server/TwitchLiveAlert.js
-    move_window "Twitch Live Alert" 1
+    nohup move_window "Twitch Live Alert" 1 \
+        >/dev/null 2>/dev/null &
+
 fi
 
 # run discord
 nohup /usr/share/discord/Discord \
     >/dev/null 2>/dev/null &
-move_window "Discord" 1
+nohup move_window "Discord" 1 \
+    >/dev/null 2>/dev/null &
+
+
 
 # run elemet for matrix
 nohup /usr/bin/flatpak run \
@@ -38,13 +44,15 @@ nohup /usr/bin/flatpak run \
     --file-forwarding \
     im.riot.Riot @@u %U @@ \
     >/dev/null 2>/dev/null &
-move_window "Element" 1
+nohup move_window "Element" 1 \
+    >/dev/null 2>/dev/null &
 
 # run google voice
 if [ $google_voice -eq 0 ]; then
     nohup firefox -new-window https://voice.google.com/u/0/messages \
         >/dev/null 2>/dev/null &
-    move_window "Voice" 1
+    nohup move_window "Voice" 1 \
+        >/dev/null 2>/dev/null &
 fi
 
 # clear thumbnails
