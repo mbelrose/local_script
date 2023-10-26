@@ -57,8 +57,9 @@ move_window "Twitch Live Alert" 1
 move_window "Element" 1
 move_window "Voice" 1
 move_window "Discord" 1
-move_window "Discord" 1 # discord opens two windows
-
+# discord opens two windows out of sync
+nohup $(sleep 600 && move_window "Discord" 1)  \
+    >/dev/null 2>/dev/null &
 
 # switch to main desktop in case got pulled
 wmctrl -s 0
