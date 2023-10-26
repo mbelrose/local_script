@@ -3,7 +3,7 @@ function move_window() {
 
     local window_title=$1
     local desktop_number=$2
-    SEARCH_LOOP_LIMIT=120
+    SEARCH_LOOP_LIMIT=600
     MOVE_LOOP_LIMIT=120
 
     # match the window title, partial match, caseless
