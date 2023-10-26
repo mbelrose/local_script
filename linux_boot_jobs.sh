@@ -41,6 +41,10 @@ fi
 trash-put /home/mint/.cache/thumbnails/ \
     >/dev/null 2>/dev/null &
 
+# run Freetube youtube client
+nohup /opt/FreeTube/freetube %U \
+    >/dev/null 2>/dev/null &
+
 # initialize firefox
 nohup firefox -private-window >/dev/null 2>/dev/null &
 
