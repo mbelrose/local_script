@@ -28,12 +28,7 @@ nohup /usr/share/discord/Discord \
     >/dev/null 2>/dev/null &
 
 # run elemet for matrix
-nohup /usr/bin/flatpak run \
-    --branch=stable \
-    --arch=x86_64 \
-    --command=/app/bin/element \
-    --file-forwarding \
-    im.riot.Riot @@u %U @@ \
+nohup /opt/Element/element-desktop %U \
     >/dev/null 2>/dev/null &
 
 # run google voice
