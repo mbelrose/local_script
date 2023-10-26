@@ -31,10 +31,17 @@ nohup /usr/share/discord/Discord \
 nohup /opt/Element/element-desktop %U \
     >/dev/null 2>/dev/null &
 
-# run google voice
 if [ $google_voice -eq 0 ]; then
-    nohup firefox -new-window https://voice.google.com/u/0/messages \
+    # run google voice
+    nohup firefox \
+        -new-window https://voice.google.com/u/0/messages \
+        -private-window \
         >/dev/null 2>/dev/null &
+else
+    # just run firefox
+    nohup firefox \
+    -private-window \
+    >/dev/null 2>/dev/null &
 fi
 
 # clear thumbnails
@@ -44,9 +51,6 @@ trash-put /home/mint/.cache/thumbnails/ \
 # run Freetube youtube client
 nohup /opt/FreeTube/freetube %U \
     >/dev/null 2>/dev/null &
-
-# initialize firefox
-nohup firefox -private-window >/dev/null 2>/dev/null &
 
 # change wallpaper
 nohup /usr/bin/variety --profile /home/mint/.config/variety/ \
