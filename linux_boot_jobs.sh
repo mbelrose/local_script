@@ -55,9 +55,11 @@ nohup /usr/bin/variety --profile /home/mint/.config/variety/ \
 
 move_window "Break Reminder" 1
 move_window "Twitch Live Alert" 1
-move_window "Discord" 1
 move_window "Element" 1
 move_window "Voice" 1
+move_window "Discord" 1
+move_window "Discord" 1 # discord opens two windows
+
 
 # switch to main desktop in case got pulled
 wmctrl -s 0
