@@ -9,9 +9,11 @@ start powershell 'C:\Users\user.DESKTOP-6UBKKRI\Documents\local_script\break_rem
 # Element for matrix
 & C:\Users\user.DESKTOP-6UBKKRI\AppData\Local\element-desktop\Element.exe
 
-# Google Voice
+# Google Voice, initialize firefox
 if ($google_voice -eq 6) {
-    & 'C:\Program Files\Mozilla Firefox\firefox.exe' -new-window "https://voice.google.com/u/0/messages"
+    & 'C:\Program Files\Mozilla Firefox\firefox.exe' -new-window "https://voice.google.com/u/0/messages"  -private-window
+} else {
+    & 'C:\Program Files\Mozilla Firefox\firefox.exe' -private-window
 }
 
 # Discord
@@ -21,9 +23,6 @@ if ($google_voice -eq 6) {
 if ($twitch_alerts -eq 6) {
     start powershell 'node \"C:\Program Files (x86)\twitch_live_alert_win\twitch_live_alert\server\TwitchLiveAlert.js\"'
 }
-
-# Firefox
-& 'C:\Program Files\Mozilla Firefox\firefox.exe' -private-window 
 
 # background wallpaper switcher
 & "C:\Program Files (x86)\johnsadventures.com\John's Background Switcher\BackgroundSwitcher.exe"
