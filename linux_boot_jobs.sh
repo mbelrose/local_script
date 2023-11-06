@@ -1,4 +1,5 @@
 #!/usr/bin/zsh
+echo $(which node)
 
 WINDOWS_HOME='/media/mint/Local Disk/Users/user.DESKTOP-6UBKKRI'
 LIB_DIRECTORY=$WINDOWS_HOME/Documents/local_script/lib
@@ -20,7 +21,7 @@ gnome-terminal --title "Break Reminder" \
 if [ $twitch_alerts -eq 0 ]; then
     gnome-terminal --title "Twitch Live Alert" \
         --working-directory $WORKING_DIRECTORY \
-        -- zsh -c 'node server/TwitchLiveAlert.js'
+        -- $NVM_BIN/node server/TwitchLiveAlert.js
 fi
 
 # run discord
