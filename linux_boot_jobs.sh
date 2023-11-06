@@ -20,7 +20,7 @@ gnome-terminal --title "Break Reminder" \
 if [ $twitch_alerts -eq 0 ]; then
     gnome-terminal --title "Twitch Live Alert" \
         --working-directory $WORKING_DIRECTORY \
-        -- node server/TwitchLiveAlert.js
+        -- zsh -c 'node server/TwitchLiveAlert.js'
 fi
 
 # run discord
