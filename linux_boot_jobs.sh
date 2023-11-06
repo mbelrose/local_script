@@ -1,5 +1,4 @@
 #!/usr/bin/zsh
-echo $(which node)
 
 WINDOWS_HOME='/media/mint/Local Disk/Users/user.DESKTOP-6UBKKRI'
 LIB_DIRECTORY=$WINDOWS_HOME/Documents/local_script/lib
