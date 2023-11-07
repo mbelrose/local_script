@@ -3,6 +3,7 @@
 WINDOWS_HOME='/media/mint/Local Disk/Users/user.DESKTOP-6UBKKRI'
 LIB_DIRECTORY=$WINDOWS_HOME/Documents/local_script/lib
 WORKING_DIRECTORY=$HOME/webdev_repositories_personal/twitch_live_alert
+NVM_BIN='/home/mint/.nvm/versions/node/v20.9.0/bin'
 
 # import move window function
 source $LIB_DIRECTORY/move_window.sh
