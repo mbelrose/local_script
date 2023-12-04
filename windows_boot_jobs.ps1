@@ -20,6 +20,9 @@ if ($twitch_alerts -eq 6) {
     start powershell 'node \"C:\Program Files (x86)\twitch_live_alert_win\twitch_live_alert\server\TwitchLiveAlert.js\"'
 }
 
+# Freetube Youtube
+& 'C:\Program Files\FreeTube\FreeTube.exe'
+
 # background wallpaper switcher
 & "C:\Program Files (x86)\johnsadventures.com\John's Background Switcher\BackgroundSwitcher.exe"
 
