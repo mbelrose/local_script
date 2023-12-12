@@ -5,7 +5,7 @@
 
 while read partial_url; do
     url="$partial_url"
-    qr_filename="${qr_filename}_qrcode.png"
-#    echo $url | qrencode -o $qr_filename
-    echo "encoding $url --> $qr_filename"
+    qr_filename="${partial_url}_qrcode.png"
+    $url | qrencode -o $qr_filename
+
 done < $1
