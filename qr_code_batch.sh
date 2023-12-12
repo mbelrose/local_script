@@ -3,8 +3,8 @@
 # and transform into qr codes, including a highres version for finicky systems
 # partial urls should be alphanumeric lowercase and dashes
 base_url="https://www.xenofera.com/xenopedia/"
-lowres_dir="high_resolution"
-highres_dir="low_resolution"
+lowres_dir="low_resolution"
+highres_dir="high_resolution"
 
 if [ ! -d "$lowres_dir" ]; then
     mkdir -p "$lowres_dir"
