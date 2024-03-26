@@ -13,6 +13,12 @@ google_voice=$?
 zenity --question --text="Do you want to run Twitch Alerts?"
 twitch_alerts=$?
 
+# run firefox and discord
+nohup firefox \
+    -new-window https://discord.com/channels/@me \
+    -private-window \
+    >/dev/null 2>/dev/null &
+
 # break reminder
 gnome-terminal --title "Break Reminder" \
     -- $WINDOWS_HOME/Documents/local_script/break_reminder.sh
@@ -36,13 +42,7 @@ if [ $google_voice -eq 0 ]; then
     # run google voice
     nohup firefox \
         -new-window https://voice.google.com/u/0/messages \
-        -private-window \
         >/dev/null 2>/dev/null &
-else
-    # just run firefox
-    nohup firefox \
-    -private-window \
-    >/dev/null 2>/dev/null &
 fi
 
 # clear thumbnails
@@ -63,9 +63,6 @@ if [ $google_voice -eq 0 ]; then
 fi
 move_window "Element" 1
 move_window "Discord" 1
-# discord opens two windows out of sync
-nohup $(sleep 240 && move_window "Discord" 1)  \
-    >/dev/null 2>/dev/null &
 
 # switch to main desktop in case got pulled
 wmctrl -s 0
