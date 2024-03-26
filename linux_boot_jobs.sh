@@ -22,6 +22,7 @@ if [ $twitch_alerts -eq 0 ]; then
     gnome-terminal --title "Twitch Live Alert" \
         --working-directory $WORKING_DIRECTORY \
         -- $NVM_BIN/node server/TwitchLiveAlert.js
+    move_window "Twitch Live Alert" 1
 fi
 
 # run discord
@@ -38,6 +39,7 @@ if [ $google_voice -eq 0 ]; then
         -new-window https://voice.google.com/u/0/messages \
         -private-window \
         >/dev/null 2>/dev/null &
+    move_window "Voice" 1
 else
     # just run firefox
     nohup firefox \
@@ -54,9 +56,7 @@ nohup /usr/bin/variety --profile /home/mint/.config/variety/ \
     >/dev/null 2>/dev/null &
 
 move_window "Break Reminder" 1
-move_window "Twitch Live Alert" 1
 move_window "Element" 1
-move_window "Voice" 1
 move_window "Discord" 1
 # discord opens two windows out of sync
 nohup $(sleep 240 && move_window "Discord" 1)  \
