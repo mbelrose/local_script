@@ -104,9 +104,9 @@ done
 done
 
 
-# miscellaneous: open notes and a command prompt
+# miscellaneous: open joplin notes and a command prompt
 nohup gnome-terminal --working-directory $working_directory >/dev/null 2>/dev/null &
-nohup xed $windows_home/Downloads/webdev_symfony_notes20180924a.txt >/dev/null 2>/dev/null &
+nohup /home/mint/.joplin/Joplin.AppImage >/dev/null 2>/dev/null &
 nohup /usr/share/code/code --open-url %U \
 >/dev/null 2>/dev/null &
 
