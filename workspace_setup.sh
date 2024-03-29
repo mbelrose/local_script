@@ -1,6 +1,7 @@
 #!/usr/bin/zsh
 
 # setup parameters
+default_joplin_note=webdev_symfony_notes20240329a
 windows_home='/media/mint/Local Disk/Users/user.DESKTOP-6UBKKRI'
 working_directory=$HOME/webdev_repositories_personal/firstreact_ts/
 mongo_dev_compose=$HOME/webdev_repositories_personal/mongo_dev/mongo_dev_compose.yml
@@ -106,7 +107,7 @@ done
 
 # miscellaneous: open joplin notes and a command prompt
 nohup gnome-terminal --working-directory $working_directory >/dev/null 2>/dev/null &
-nohup /home/mint/.joplin/Joplin.AppImage >/dev/null 2>/dev/null &
+nohup /home/mint/.joplin/Joplin.AppImage $default_joplin_note >/dev/null 2>/dev/null &
 nohup /usr/share/code/code --open-url %U \
 >/dev/null 2>/dev/null &
 
