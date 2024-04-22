@@ -1,7 +1,7 @@
 #!/usr/bin/zsh
 
-WINDOWS_HOME='/media/mint/Local Disk/Users/user.DESKTOP-6UBKKRI'
-LIB_DIRECTORY=$WINDOWS_HOME/Documents/local_script/lib
+HOME_DIRECTORY='/media/mint/Local Disk/Users/user.DESKTOP-6UBKKRI'
+LIB_DIRECTORY=$HOME_DIRECTORY/Documents/local_script/lib
 WORKING_DIRECTORY=$HOME/webdev_repositories_personal/twitch_live_alert
 NVM_BIN='/home/mint/.nvm/versions/node/v20.9.0/bin'
 
@@ -21,7 +21,7 @@ nohup firefox \
 
 # break reminder
 gnome-terminal --title "Break Reminder" \
-    -- $WINDOWS_HOME/Documents/local_script/break_reminder.sh
+    -- $HOME_DIRECTORY/Documents/local_script/break_reminder.sh
 
 # run twitch alerts
 if [ $twitch_alerts -eq 0 ]; then
