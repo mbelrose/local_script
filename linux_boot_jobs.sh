@@ -1,6 +1,6 @@
 #!/usr/bin/zsh
 
-HOME_DIRECTORY='/media/mint/Local Disk/Users/user.DESKTOP-6UBKKRI'
+HOME_DIRECTORY='/mnt/8cba077b-050c-47b9-9e82-8c8b0730ca1e'
 LIB_DIRECTORY=$HOME_DIRECTORY/Documents/local_script/lib
 WORKING_DIRECTORY=$HOME/webdev_repositories_personal/twitch_live_alert
 NVM_BIN='/home/mint/.nvm/versions/node/v20.9.0/bin'
