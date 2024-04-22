@@ -1,9 +1,9 @@
 #!/usr/bin/zsh
 
-HOME_DIRECTORY='/mnt/8cba077b-050c-47b9-9e82-8c8b0730ca1e'
-LIB_DIRECTORY=$HOME_DIRECTORY/Documents/local_script/lib
-WORKING_DIRECTORY=$HOME/opt/twitch_live_alert
-NVM_BIN='/home/mint/.nvm/versions/node/v21.7.3/bin/'
+WINDOWS_HOME='/media/mint/Local Disk/Users/user.DESKTOP-6UBKKRI'
+LIB_DIRECTORY=$WINDOWS_HOME/Documents/local_script/lib
+WORKING_DIRECTORY=$HOME/webdev_repositories_personal/twitch_live_alert
+NVM_BIN='/home/mint/.nvm/versions/node/v20.9.0/bin'
 
 # import move window function
 source $LIB_DIRECTORY/move_window.sh
@@ -21,7 +21,7 @@ nohup firefox \
 
 # break reminder
 gnome-terminal --title "Break Reminder" \
-    -- $HOME_DIRECTORY/Documents/local_script/break_reminder.sh
+    -- $WINDOWS_HOME/Documents/local_script/break_reminder.sh
 
 # run twitch alerts
 if [ $twitch_alerts -eq 0 ]; then
