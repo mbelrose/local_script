@@ -1,5 +1,7 @@
 #!/usr/bin/zsh
 
+# might need to sudo apt install trash-cli to use this
+
 WINDOWS_HOME='/mnt/8cba077b-050c-47b9-9e82-8c8b0730ca1e'
 LIB_DIRECTORY=$WINDOWS_HOME/Documents/local_script/lib
 WORKING_DIRECTORY=$HOME/opt/twitch_live_alert
