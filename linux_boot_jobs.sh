@@ -2,9 +2,9 @@
 
 # might need to sudo apt install trash-cli to use this
 
-WINDOWS_HOME='/mnt/8cba077b-050c-47b9-9e82-8c8b0730ca1e'
-LIB_DIRECTORY=$WINDOWS_HOME/Documents/local_script/lib
-WORKING_DIRECTORY=$HOME/opt/twitch_live_alert
+HOME_DIRECTORY='/mnt/8cba077b-050c-47b9-9e82-8c8b0730ca1e'
+LIB_DIRECTORY=$HOME_DIRECTORY/Documents/local_script/lib
+WORKING_DIRECTORY=$HOME_DIRECTORY/opt/twitch_live_alert
 NVM_BIN='/home/mint/.nvm/versions/node/v21.7.3/bin'
 
 # import move window function
@@ -23,7 +23,7 @@ nohup firefox \
 
 # break reminder
 gnome-terminal --title "Break Reminder" \
-    -- $WINDOWS_HOME/Documents/local_script/break_reminder.sh
+    -- $HOME_DIRECTORY/Documents/local_script/break_reminder.sh
 
 # run twitch alerts
 if [ $twitch_alerts -eq 0 ]; then
