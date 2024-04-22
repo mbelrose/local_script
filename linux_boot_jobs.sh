@@ -30,10 +30,6 @@ if [ $twitch_alerts -eq 0 ]; then
         -- $NVM_BIN/node server/TwitchLiveAlert.js
 fi
 
-# run discord
-nohup /usr/share/discord/Discord \
-    >/dev/null 2>/dev/null &
-
 # run elemet for matrix
 nohup /opt/Element/element-desktop %U \
     >/dev/null 2>/dev/null &
