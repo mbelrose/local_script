@@ -33,7 +33,10 @@ if [ $twitch_alerts -eq 0 ]; then
 fi
 
 # run elemet for matrix
-nohup /opt/Element/element-desktop %U \
+nohup /usr/bin/flatpak run \
+    --branch=stable --arch=x86_64 \
+    --command=/app/bin/element --file-forwarding \
+    im.riot.Riot @@u %U @ \
     >/dev/null 2>/dev/null &
 
 if [ $google_voice -eq 0 ]; then
