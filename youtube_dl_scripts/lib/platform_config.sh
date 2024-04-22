@@ -8,7 +8,7 @@ function platform_config {
         cd "$HOME_DIR/storage/shared/Download"    
     else
         PLAYER_COMMAND='vlc'
-        HOME_DIR='/media/mint/Local Disk/Users/user.DESKTOP-6UBKKRI'
-        cd "$HOME_DIR/Videos/videos_to_move"
+        HOME_DIR=$HOME
+        cd "/mnt/8cba077b-050c-47b9-9e82-8c8b0730ca1e/Videos/videos_to_move"
     fi
 }
