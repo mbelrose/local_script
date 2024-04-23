@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/zsh
 
 device_macs=("14:43:19:E5:B5:9F" "1C:96:5A:C5:5C:2C")
 # device names must be in the same order as the mac addresses

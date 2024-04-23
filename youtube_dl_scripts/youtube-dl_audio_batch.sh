@@ -1,4 +1,4 @@
-#!
+#!/usr/bin/zsh
 mkdir -p output/links
 for i in $(find links/x??); do
 	echo '---'`date` >> output/$i.log

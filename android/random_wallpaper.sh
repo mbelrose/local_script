@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/zsh
 
 # might need pkg install jq
 # put flickr api key in config/.flickr_api_key

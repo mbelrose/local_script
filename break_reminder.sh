@@ -1,4 +1,4 @@
-#/usr/bin/zsh
+#!/usr/bin/zsh
 
 # might have to install 
 # sudo apt-get install libnotify-bin
