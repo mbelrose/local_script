@@ -13,6 +13,7 @@ pkg install nodejs
 pkg install python
 pkg install zsh
 pkg install libqrencode
+pkg install man
 
 pkg install libxslt
 pip install streamlink
