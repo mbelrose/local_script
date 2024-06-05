@@ -15,10 +15,15 @@ google_voice=$?
 zenity --question --text="Do you want to run Twitch Alerts?"
 twitch_alerts=$?
 
-# run firefox and discord
+# run firefox
 nohup firefox \
-    -new-window https://discord.com/channels/@me \
     -private-window \
+    >/dev/null 2>/dev/null &
+
+# run discord
+nohup /usr/bin/flatpak \
+    run --branch=stable --arch=x86_64 \
+    --command=com.discordapp.Discord com.discordapp.Discord \
     >/dev/null 2>/dev/null &
 
 # break reminder
@@ -63,7 +68,6 @@ if [ $google_voice -eq 0 ]; then
     move_window "Voice" 1
 fi
 move_window "Element" 1
-move_window "Discord" 1
 
 # switch to main desktop in case got pulled
 wmctrl -s 0
