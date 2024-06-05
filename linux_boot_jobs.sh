@@ -68,6 +68,7 @@ if [ $google_voice -eq 0 ]; then
     move_window "Voice" 1
 fi
 move_window "Element" 1
+move_window "Discord" 1
 
 # switch to main desktop in case got pulled
 wmctrl -s 0
