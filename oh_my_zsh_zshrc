@@ -129,10 +129,15 @@ then
 else
 
     # turn clipboard into qr code
-    # needs pkg install libqrencode
+    # needs pkg install libqrencode and pkg install xclip
     alias qrclip='xclip -selection c -o | qrencode -t utf8 | xclip -selection c'
+
     #generate qr code
     alias qr="'/media/mint/Local Disk/Users/user.DESKTOP-6UBKKRI/Documents/local_script/qr_code.sh'"
+
+    #put random digits in clipboard
+    alias random_clip='echo $(od -An -N8 -d /dev/urandom) | tr -d " " | xclip -selection c'
+
     
 fi
 
