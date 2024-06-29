@@ -136,7 +136,8 @@ else
     alias qr="'/media/mint/Local Disk/Users/user.DESKTOP-6UBKKRI/Documents/local_script/qr_code.sh'"
 
     #put random digits in clipboard
-    alias random_clip='echo -n $(od -An -N8 -d /dev/urandom) | tr -d " " | xclip -selection c'
+    alias random_clip='od -An -N8 -d /dev/urandom | tr -d " \\n" | xclip -selection c'
+    
 
     
 fi
