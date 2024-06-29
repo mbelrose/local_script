@@ -137,7 +137,7 @@ else
 
     #put random digits in clipboard
     alias random_clip='od -An -N8 -d /dev/urandom | tr -d " \\n" | xclip -selection c'
-    alias date_clip='date '+%Y%m%da' | tr -d " \\n" | xclip -selection c'
+    alias date_clip='date '+%Y%m%d' | tr -d " \\n" | xclip -selection c'
 
     
 fi
