@@ -9,7 +9,7 @@ settings="?autoplay=1&continue=0&quality=medium&related_videos=false&comments=fa
 login_script='file:///mnt/8cba077b-050c-47b9-9e82-8c8b0730ca1e/Documents/local_script/invidious_autologin.html'
 
 # initialize firefox so further calls don't fork processes
-nohup firefox -private >/dev/null 2>/dev/null &
+nohup firefox -private-window >/dev/null 2>/dev/null &
 
 cd $working_directory
 
@@ -45,7 +45,7 @@ do
         if  curl -s $invidious_server_url --output /dev/null;
         then
                 # open invidious server in firefox
-                firefox -private -url $login_script >/dev/null 2>/dev/null
+                firefox -private-window -url $login_script >/dev/null 2>/dev/null
                 
                 break
         fi
