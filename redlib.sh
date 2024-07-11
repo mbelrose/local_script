@@ -5,7 +5,7 @@
 timeout=60
 working_directory=$HOME/.local/opt/redlib
 redlib_server_url="http://127.0.0.1:8160/"
-
+settings="settings/restore/?theme=system&front_page=default&layout=compact&wide=off&post_sort=hot&comment_sort=confidence&show_nsfw=off&use_hls=off&hide_hls_notification=off&hide_awards=off&fixed_navbar=on&subscriptions=&filters="
 # initialize firefox so further calls don't fork processes
 nohup firefox -private-window >/dev/null 2>/dev/null &
 
@@ -43,7 +43,7 @@ do
         if  curl -s $redlib_server_url --output /dev/null;
         then
                 # open invidious server in firefox
-                firefox -private-window -url $redlib_server_url >/dev/null 2>/dev/null
+                firefox -private-window -url $redlib_server_url$settings >/dev/null 2>/dev/null
                 
                 break
         fi
