@@ -1,7 +1,9 @@
 #!/usr/bin/zsh
 
+#the script must run as a user with permission to run systemctl as root
+
 timeout=60
-working_directory=$HOME/.local/bin/invidious/
+working_directory=$HOME/.local/opt/invidious
 invidious_server_url="http://127.0.0.1:3300/feed/popular"
 settings="?autoplay=1&continue=0&quality=medium&related_videos=false&comments=false&volume=2&dark_mode=true"
 login_script='file:///mnt/8cba077b-050c-47b9-9e82-8c8b0730ca1e/Documents/local_script/invidious_autologin.html'
@@ -14,7 +16,7 @@ cd $working_directory
 # start docker
 if ! systemctl is-active --quiet docker;
 then 
-        sudo systemctl start docker
+        systemctl start docker
 fi
 
 # wait for docker to start
@@ -32,7 +34,7 @@ do
 # start invidious server
 if !  curl -s $invidious_server_url --output /dev/null;
 then
-        docker compose -f docker-compose-local.yml up -d
+        docker compose up -d
 fi
 
 # wait for invidious server to start
