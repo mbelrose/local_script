@@ -45,7 +45,7 @@ do
         if  curl -s $invidious_server_url --output /dev/null;
         then
                 # open invidious server in firefox
-                firefox -private-window -url $login_script >/dev/null 2>/dev/null
+                firefox -private-window $login_script >/dev/null 2>/dev/null
                 
                 break
         fi
