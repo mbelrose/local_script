@@ -43,7 +43,7 @@ do
         if  curl -s $redlib_server_url --output /dev/null;
         then
                 # open invidious server in firefox
-                firefox -private-window -url $redlib_server_url$settings >/dev/null 2>/dev/null
+                firefox -private-window $redlib_server_url$settings >/dev/null 2>/dev/null
                 
                 break
         fi
