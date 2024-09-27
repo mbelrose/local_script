@@ -72,7 +72,7 @@ zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker colorize themes z  zsh-autosuggestions)
+plugins=(git docker colorize themes z zsh-autosuggestions)
 # maybe need to pip install pygments
 
 # git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
@@ -138,6 +138,11 @@ else
     #put random digits in clipboard
     alias random_clip='od -An -N8 -d /dev/urandom | tr -d " \\n" | xclip -selection c'
     alias date_clip='date '+%Y%m%d' | tr -d " \\n" | xclip -selection c'
+
+    # ai command line
+    # https://github.com/sigoden/aichat
+    # cargo install aichat
+    alias clippy='aichat -e'
 
     
 fi
