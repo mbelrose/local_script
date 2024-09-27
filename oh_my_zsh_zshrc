@@ -109,6 +109,14 @@ source $ZSH/oh-my-zsh.sh
 # windows shared drive
 WINDOWS_HOME='/media/mint/Local Disk/Users/user.DESKTOP-6UBKKRI'
 
+# ai command line
+# https://github.com/sigoden/aichat
+# linux: 
+# cargo install aichat
+# android termux:
+# pkg install aichat
+alias clippy='aichat -e'
+
 
 if [[ "$(uname -o)" == 'Android' ]]
 then
@@ -138,12 +146,6 @@ else
     #put random digits in clipboard
     alias random_clip='od -An -N8 -d /dev/urandom | tr -d " \\n" | xclip -selection c'
     alias date_clip='date '+%Y%m%d' | tr -d " \\n" | xclip -selection c'
-
-    # ai command line
-    # https://github.com/sigoden/aichat
-    # cargo install aichat
-    alias clippy='aichat -e'
-
     
 fi
 
