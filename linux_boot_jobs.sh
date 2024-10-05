@@ -37,13 +37,6 @@ if [ $twitch_alerts -eq 0 ]; then
         -- $NVM_BIN/node server/TwitchLiveAlert.js
 fi
 
-# run elemet for matrix
-nohup /usr/bin/flatpak run \
-    --branch=stable --arch=x86_64 \
-    --command=/app/bin/element --file-forwarding \
-    im.riot.Riot @@u %U @ \
-    >/dev/null 2>/dev/null &
-
 if [ $google_voice -eq 0 ]; then
     # run google voice
     nohup firefox \
@@ -67,7 +60,7 @@ fi
 if [ $google_voice -eq 0 ]; then
     move_window "Voice" 1
 fi
-move_window "Element" 1
+
 move_window "Discord" 1
 
 # switch to main desktop in case got pulled
