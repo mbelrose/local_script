@@ -44,6 +44,12 @@ if [ $google_voice -eq 0 ]; then
         >/dev/null 2>/dev/null &
 fi
 
+# Signal messenger
+nohup /opt/Signal/signal-desktop \
+    --no-sandbox %U \
+    >/dev/null 2>/dev/null &
+
+
 # clear thumbnails
 trash-put /home/mint/.cache/thumbnails/ \
     >/dev/null 2>/dev/null &
