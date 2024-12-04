@@ -10,10 +10,16 @@ NVM_BIN='/home/mint/.nvm/versions/node/v21.7.3/bin'
 # import move window function
 source $LIB_DIRECTORY/move_window.sh
 
-zenity --question --text="Do you want to run Google Voice?"
-google_voice=$?
-zenity --question --text="Do you want to run Twitch Alerts?"
-twitch_alerts=$?
+# query user for what apps to run
+zenity --list --checklist \
+--title="What do you want to run?" --height=600 --width=600 \
+--multiple --print-column=2 --hide-column=2 \
+--column=checkbox --column=number --column=label \
+TRUE google_voice "Google Voice" \
+FALSE twitch_live_alert "Twitch Live Alert" \
+FALSE signal_messenger "Signal Messenger" \
+| read apps_to_run
+
 
 # run firefox
 nohup firefox \
@@ -31,23 +37,25 @@ gnome-terminal --title "Break Reminder" \
     -- $HOME_DIRECTORY/Documents/local_script/break_reminder.sh
 
 # run twitch alerts
-if [ $twitch_alerts -eq 0 ]; then
+if [[ $apps_to_run =~ \W?twitch_live_alert\W? ]]; then
     gnome-terminal --title "Twitch Live Alert" \
         --working-directory $WORKING_DIRECTORY \
         -- $NVM_BIN/node server/TwitchLiveAlert.js
 fi
 
-if [ $google_voice -eq 0 ]; then
-    # run google voice
+# run google voice
+if [[ $apps_to_run =~ \W?google_voice\W? ]]; then
     nohup firefox \
         -new-window https://voice.google.com/u/0/messages \
         >/dev/null 2>/dev/null &
 fi
 
-# Signal messenger
-nohup /opt/Signal/signal-desktop \
-    --no-sandbox %U \
-    >/dev/null 2>/dev/null &
+# run Signal messenger
+if [[ $apps_to_run =~ \W?signal_messenger\W? ]]; then
+    nohup /opt/Signal/signal-desktop \
+        --no-sandbox %U \
+        >/dev/null 2>/dev/null &
+fi
 
 
 # clear thumbnails
