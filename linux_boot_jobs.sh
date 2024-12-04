@@ -69,10 +69,10 @@ nohup /usr/bin/variety --profile /home/mint/.config/variety/ \
 
 # move windows to second desktop
 move_window "Break Reminder" 1
-if [ $twitch_alerts -eq 0 ]; then
+if [[ $apps_to_run =~ twitch_live_alert ]]; then
     move_window "Twitch Live Alert" 1
 fi
-if [ $google_voice -eq 0 ]; then
+if [[ $apps_to_run =~ google_voice ]]; then
     move_window "Voice" 1
 fi
 
