@@ -11,6 +11,7 @@ NVM_BIN='/home/mint/.nvm/versions/node/v21.7.3/bin'
 source $LIB_DIRECTORY/move_window.sh
 
 # query user for what apps to run
+# using plaintext match, so make sure no tag text is contained in another 
 zenity --list --checklist \
 --title="What do you want to run?" --height=600 --width=600 \
 --multiple --print-column=2 --hide-column=2 \
@@ -37,21 +38,21 @@ gnome-terminal --title "Break Reminder" \
     -- $HOME_DIRECTORY/Documents/local_script/break_reminder.sh
 
 # run twitch alerts
-if [[ $apps_to_run =~ \W?twitch_live_alert\W? ]]; then
+if [[ $apps_to_run =~ twitch_live_alert ]]; then
     gnome-terminal --title "Twitch Live Alert" \
         --working-directory $WORKING_DIRECTORY \
         -- $NVM_BIN/node server/TwitchLiveAlert.js
 fi
 
 # run google voice
-if [[ $apps_to_run =~ \W?google_voice\W? ]]; then
+if [[ $apps_to_run =~ google_voice ]]; then
     nohup firefox \
         -new-window https://voice.google.com/u/0/messages \
         >/dev/null 2>/dev/null &
 fi
 
 # run Signal messenger
-if [[ $apps_to_run =~ \W?signal_messenger\W? ]]; then
+if [[ $apps_to_run =~ signal_messenger ]]; then
     nohup /opt/Signal/signal-desktop \
         --no-sandbox %U \
         >/dev/null 2>/dev/null &
