@@ -15,8 +15,8 @@ zenity --list --checklist \
 --title="What do you want to run?" --height=600 --width=600 \
 --multiple --print-column=2 --hide-column=2 \
 --column=checkbox --column=number --column=label \
-TRUE google_voice "Google Voice" \
-FALSE twitch_live_alert "Twitch Live Alert" \
+TRUE twitch_live_alert "Twitch Live Alert" \
+FALSE google_voice "Google Voice" \
 FALSE signal_messenger "Signal Messenger" \
 | read apps_to_run
 
