@@ -15,6 +15,7 @@ pkg install zsh
 pkg install libqrencode
 pkg install man
 
+pkg install python-lxml
 pkg install libxslt
 pip install streamlink
 pkg install ffmpeg
