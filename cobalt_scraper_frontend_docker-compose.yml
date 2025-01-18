@@ -1,6 +1,6 @@
 # must build the project first with node, pnpm, vite
 # from the "web" directory of the repo
-# put WEB_DEFAULT_API="http://127.0.0.1:9800" into your .env file
+# put WEB_DEFAULT_API="http://192.168.1.144:9800" into your .env file
 # pnpm run build
 # then serve the build directory as /home/static in the image
 # might need an empty httpd.conf file to get it to work
