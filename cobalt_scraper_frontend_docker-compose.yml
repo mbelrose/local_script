@@ -1,0 +1,10 @@
+version: "3.9"
+services: 
+cobalt_web:
+  image: lipanski/docker-static-website:latest
+  restart: unless-stopped
+  containter_name: cobalt_web
+  ports:
+    - "9800:3000"
+  volumes:
+  - /home/mint/.local/opt/cobalt_web:/home/static
