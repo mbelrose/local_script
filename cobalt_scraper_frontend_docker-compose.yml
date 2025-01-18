@@ -3,6 +3,6 @@ services:
     image: lipanski/docker-static-website:latest
     restart: unless-stopped
     ports:
-      - "9800:3000"
+      - "9900:3000"
     volumes:
     - /home/mint/.local/opt/cobalt_web:/home/static
