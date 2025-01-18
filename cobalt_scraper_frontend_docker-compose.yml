@@ -1,3 +1,9 @@
+# must build the project first
+# DEFAULT_API=http://127.0.0.1:9800
+# HOST=127.0.0.1
+# from the "web" directory of the repo
+# pnpm run build
+
 services: 
   cobalt_web:
     image: lipanski/docker-static-website:latest
