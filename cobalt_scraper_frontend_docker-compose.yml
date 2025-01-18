@@ -9,9 +9,10 @@ services:
     image: lipanski/docker-static-website:latest
     restart: unless-stopped
     environment:
-      - DEFAULT_API=http://127.0.0.1:9800
+      DEFAULT_API: http://127.0.0.1:9800
+      WEB_DEFAULT_API: http://127.0.0.1:9800
     ports:
-      - "9900:3000"
+      - 9900:3000
     volumes:
     - /home/mint/.local/opt/cobalt_web:/home/static
     - /home/mint/.local/opt/cobalt_web/httpd.conf:/home/static/httpd.conf:ro
