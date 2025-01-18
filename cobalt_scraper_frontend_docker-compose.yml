@@ -6,3 +6,5 @@ services:
       - "9900:3000"
     volumes:
     - /home/mint/.local/opt/cobalt_web:/home/static
+    # can just use an empty httpd.conf file here
+    - /home/mint/.local/opt/cobalt_web/httpd.conf:/home/static/httpd.conf:ro
