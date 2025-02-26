@@ -27,3 +27,5 @@ docker compose down
 #no git repo to pull here
 docker pull lipanski/docker-static-website
 docker compose up -d
+
+docker image prune
