@@ -1,4 +1,4 @@
-#!
+#!/usr/bin/zsh
 cd ~/.local/opt/redlib
 docker compose down
 git pull
