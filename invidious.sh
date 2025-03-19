@@ -5,7 +5,6 @@
 timeout=60
 working_directory=$HOME/.local/opt/invidious
 invidious_server_url="http://127.0.0.1:3300/feed/popular"
-settings="?autoplay=1&continue=0&quality=medium&related_videos=false&comments=false&volume=2&dark_mode=true"
 login_script='file:///mnt/8cba077b-050c-47b9-9e82-8c8b0730ca1e/Documents/local_script/invidious_autologin.html'
 
 # initialize firefox so further calls don't fork processes
