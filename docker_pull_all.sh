@@ -28,4 +28,10 @@ docker compose down
 docker pull lipanski/docker-static-website
 docker compose up -d
 
+cd ~/.local/opt/glance
+docker compose down
+git pull
+docker pull glanceapp/glance
+docker compose up -d
+
 docker image prune
