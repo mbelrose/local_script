@@ -116,7 +116,7 @@ WINDOWS_HOME='/media/mint/Local Disk/Users/user.DESKTOP-6UBKKRI'
 # android termux:
 # pkg install aichat
 alias clippy='aichat -e'
-
+alias Clippy='aichat -e'
 
 if [[ "$(uname -o)" == 'Android' ]]
 then
