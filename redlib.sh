@@ -5,7 +5,7 @@
 timeout=60
 working_directory=$HOME/.local/opt/redlib
 redlib_server_url="http://127.0.0.1:8160/"
-settings="settings/restore/?theme=system&front_page=default&layout=compact&wide=off&post_sort=hot&comment_sort=confidence&autoplay_videos=on&use_hls=on"
+settings="settings/restore/?theme=dark&front_page=default&layout=compact&wide=off&blur_spoiler=off&show_nsfw=off&blur_nsfw=off&hide_hls_notification=off&video_quality=medium&hide_sidebar_and_summary=off&use_hls=on&autoplay_videos=on&fixed_navbar=on&disable_visit_reddit_confirmation=off&comment_sort=top&post_sort=top&subscriptions=&filters=&hide_awards=off&hide_score=off&remove_default_feeds=off"
 # initialize firefox so further calls don't fork processes
 nohup firefox -private-window >/dev/null 2>/dev/null &
 
