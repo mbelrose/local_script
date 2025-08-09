@@ -118,12 +118,6 @@ WINDOWS_HOME='/mnt/8cba077b-050c-47b9-9e82-8c8b0730ca1e'
 alias clippy='aichat -e'
 alias Clippy='aichat -e'
 
-
-#put random digits in clipboard
-alias random_clip='od -An -N8 -d /dev/urandom | tr -d " \\n" | xclip -selection c'
-alias date_clip='date '+%Y%m%d' | tr -d " \\n" | xclip -selection c'
-
-
 if [[ "$(uname -o)" == 'Android' ]]
 then
 
@@ -148,6 +142,10 @@ else
 
     #generate qr code
     alias qr="'$WINDOWS_HOME/Documents/local_script/qr_code.sh'"
+
+    #put random digits in clipboard
+    alias random_clip='od -An -N8 -d /dev/urandom | tr -d " \\n" | xclip -selection c'
+    alias date_clip='date '+%Y%m%d' | tr -d " \\n" | xclip -selection c'
 
     export NVM_DIR="$HOME/.nvm"
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
