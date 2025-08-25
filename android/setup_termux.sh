@@ -1,4 +1,5 @@
 # put openai key in ~/.keys/openai_api_key
+# don't forget to install rlcone.conf and ssh keys if needed
 
 pkg update
 pkg upgrade
@@ -25,6 +26,9 @@ pkg install aichat
 mkdir -p ~/.local/opt
 cd ~/.local/opt
 git clone https://github.com/mbelrose/local_script.git
+cd local_script
+source make_executable.sh
+cd ~
 
 #oh my zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
