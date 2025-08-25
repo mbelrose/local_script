@@ -22,6 +22,7 @@ pkg install ffmpeg
 pip install yt-dlp
 pkg install aichat
 
+mkdir -p ~/.local/opt
 cd ~/.local/opt
 git clone https://github.com/mbelrose/local_script.git
 
