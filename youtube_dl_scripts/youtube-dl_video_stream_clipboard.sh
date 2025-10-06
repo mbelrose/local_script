@@ -6,4 +6,4 @@ source "$LIBRARY_DIR/platform_config.sh"
 
 platform_config
 
-`$PLAYER_COMMAND $(yt-dlp -f "best[height<=1080]" -g $(xclip -o -selection c ))`
+`$PLAYER_COMMAND $(yt-dlp -g $(xclip -o -selection c ))`
