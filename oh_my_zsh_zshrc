@@ -148,7 +148,7 @@ else
     alias date_clip='date '+%Y%m%d' | tr -d " \\n" | xclip -selection c'
 
     # play youtube video in vlc from clipboard
-    alias yt='vlc $(yt-dlp -f "best[height<=1080]" -g $(xclip -o -selection c ))'
+    alias yt='vlc $(yt-dlp -g $(xclip -o -selection c ))'
 
     export NVM_DIR="$HOME/.nvm"
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
