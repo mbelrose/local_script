@@ -1,9 +1,4 @@
 #!/usr/bin/zsh
-cd ~/.local/opt/redlib
-docker compose down
-git pull
-docker pull quay.io/redlib/redlib
-docker compose up -d
 
 cd ~/.local/opt/invidious
 docker compose down
