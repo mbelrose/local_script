@@ -1,15 +1,5 @@
 #!/usr/bin/zsh
 
-cd ~/.local/opt/invidious
-docker compose down
-git pull
-docker pull quay.io/invidious/invidious
-docker pull quay.io/invidious/inv-sig-helper
-# docker pull quay.io/invidious/youtube-trusted-session-generator
-# probably don't need to update this regularly
-docker pull postgres
-docker compose up -d
-
 # cd ~/.local/opt/cobalt
 # docker compose down
 # git pull
