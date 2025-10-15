@@ -5,6 +5,9 @@
 timeout=60
 working_directory=$HOME/.local/opt/jellyfin
 jellyfin_server_url="http://127.0.0.1:8096/"
+NO_EXTERNAL_COMPOSE=docker-compose.yml
+EXTERNAL_COMPOSE=docker-compose-external.yml
+EXTERNAL_PATH="/media/mint/Worn out disk1/Documents/minor/erase_redundant"
 # login_script='file:///mnt/8cba077b-050c-47b9-9e82-8c8b0730ca1e/Documents/local_script/jellyfin_autologin.html'
 # initialize firefox so further calls don't fork processes
 nohup firefox -private-window >/dev/null 2>/dev/null &
@@ -32,7 +35,12 @@ do
 # start invidious server
 if !  curl -s $jellyfin_server_url --output /dev/null;
 then
-        docker compose up -d
+        COMPOSE_FILE=$NO_EXTERNAL_COMPOSE
+        if [ -d "$EXTERNAL_PATH" ];
+        then
+                COMPOSE_FILE=$EXTERNAL_COMPOSE
+        fi
+        docker compose -f $COMPOSE_FILE up -d
 fi
 
 # wait for invidious server to start
