@@ -1,2 +1,2 @@
-default-stream=480p,480p30,worst
+default-stream=480p,480p30,480p10,worst
 player-no-close
