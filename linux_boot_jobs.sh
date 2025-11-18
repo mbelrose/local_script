@@ -61,9 +61,17 @@ if [[ $apps_to_run =~ signal_messenger ]]; then
         >/dev/null 2>/dev/null &
 fi
 
+
 # sync keepassxc database
 gnome-terminal --title "KeepassXC Sync" \
     -- rclone sync --verbose $KEEPASSXC_LOCAL_PATH $KEEPASSXC_REMOTE_PATH
+
+# launch keepassxc
+nohup /usr/bin/flatpak \
+    run --branch=stable --arch=x86_64 \
+    --command=keepassxc \
+    --file-forwarding org.keepassxc.KeePassXC @@ %f @@ \
+    >/dev/null 2>/dev/null &
 
 # clear thumbnails
 trash-put /home/mint/.cache/thumbnails/ \
@@ -80,6 +88,7 @@ if [[ $apps_to_run =~ google_voice ]]; then
 fi
 
 move_window "Discord" 1
+move_window KeePassXC 1
 
 # switch to main desktop in case got pulled
 wmctrl -s 0
