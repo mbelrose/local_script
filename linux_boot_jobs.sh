@@ -7,6 +7,9 @@ LIB_DIRECTORY=$HOME_DIRECTORY/Documents/local_script/lib
 WORKING_DIRECTORY=$HOME_DIRECTORY/opt/twitch_live_alert
 NVM_BIN='/home/mint/.nvm/versions/node/v21.7.3/bin'
 
+KEEPASSXC_LOCAL_PATH=/home/mint/.local/opt/keepassxc/keepassxc_database_20251118a
+KEEPASSXC_REMOTE_PATH=google_drive_drmutant_gmail_com:keepassxc/keepassxc_database_20251118a
+
 # import move window function
 source $LIB_DIRECTORY/move_window.sh
 
@@ -58,6 +61,9 @@ if [[ $apps_to_run =~ signal_messenger ]]; then
         >/dev/null 2>/dev/null &
 fi
 
+# sync keepassxc database
+gnome-terminal --title "KeepassXC Sync" \
+    -- rclone sync --verbose $KEEPASSXC_LOCAL_PATH $KEEPASSXC_REMOTE_PATH
 
 # clear thumbnails
 trash-put /home/mint/.cache/thumbnails/ \
