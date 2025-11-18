@@ -63,9 +63,6 @@ fi
 trash-put /home/mint/.cache/thumbnails/ \
     >/dev/null 2>/dev/null &
 
-# change wallpaper
-nohup /usr/bin/variety --profile /home/mint/.config/variety/ \
-    >/dev/null 2>/dev/null &
 
 # move windows to second desktop
 move_window "Break Reminder" 1
