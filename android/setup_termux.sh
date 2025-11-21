@@ -21,6 +21,9 @@ pkg install libxslt
 pip install streamlink
 pkg install ffmpeg
 pip install yt-dlp
+# yt-dlp might require deno https://deno.com/
+pkg install rust
+cargo install deno --locked
 pkg install aichat
 
 mkdir -p ~/.local/opt
