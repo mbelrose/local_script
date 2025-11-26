@@ -73,6 +73,10 @@ nohup /usr/bin/flatpak \
     --file-forwarding org.keepassxc.KeePassXC @@ %f @@ \
     >/dev/null 2>/dev/null &
 
+# run joplin note app
+nohup /home/mint/.joplin/Joplin.AppImage \
+    >/dev/null 2>/dev/null &
+
 # clear thumbnails
 trash-put /home/mint/.cache/thumbnails/ \
     >/dev/null 2>/dev/null &
@@ -89,6 +93,7 @@ fi
 
 move_window "Discord" 1
 move_window KeePassXC 1
+move_window "Joplin" 1
 
 # switch to main desktop in case got pulled
 wmctrl -s 0
