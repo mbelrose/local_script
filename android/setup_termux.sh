@@ -15,6 +15,10 @@ pkg install zsh
 pkg install libqrencode
 pkg install man
 
+#google gemini command line interface
+npm install -g @google/gemini-cli
+
+
 pkg install python-lxml
 pkg install libxslt
 pip install streamlink
