@@ -1,4 +1,3 @@
-# put openai key in ~/.keys/openai_api_key
 # don't forget to install rlcone.conf and ssh keys if needed
 
 pkg update
@@ -22,7 +21,6 @@ pip install streamlink
 pkg install ffmpeg
 pip install yt-dlp
 # yt-dlp might require deno https://deno.com/
-pkg install aichat
 
 mkdir -p ~/.local/opt
 cd ~/.local/opt

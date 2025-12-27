@@ -109,16 +109,6 @@ source $ZSH/oh-my-zsh.sh
 # windows shared drive
 WINDOWS_HOME='/mnt/8cba077b-050c-47b9-9e82-8c8b0730ca1e'
 
-# ai command line
-# https://github.com/sigoden/aichat
-# linux: 
-# cargo install aichat
-# android termux:
-# pkg install aichat
-alias clippy='aichat -e'
-alias Clippy='aichat -e'
-
-
 if [[ "$(uname -o)" == 'Android' ]]
 then
 
