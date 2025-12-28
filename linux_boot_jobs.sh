@@ -31,9 +31,8 @@ nohup firefox \
     >/dev/null 2>/dev/null &
 
 # run discord
-nohup /usr/bin/flatpak \
-    run --branch=stable --arch=x86_64 \
-    --command=com.discordapp.Discord com.discordapp.Discord \
+nohup firefox \
+    -new-window https://discord.com/channels/@me \
     >/dev/null 2>/dev/null &
 
 # break reminder
