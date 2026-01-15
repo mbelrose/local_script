@@ -20,7 +20,7 @@ zenity --list --checklist \
 --multiple --print-column=2 --hide-column=2 \
 --column=checkbox --column=number --column=label \
 TRUE twitch_live_alert "Twitch Live Alert" \
-FALSE google_voice "Google Voice" \
+TRUE google_voice "Google Voice" \
 FALSE signal_messenger "Signal Messenger" \
 | read apps_to_run
 
