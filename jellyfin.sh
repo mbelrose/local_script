@@ -9,8 +9,8 @@ NO_EXTERNAL_COMPOSE=docker-compose.yml
 EXTERNAL_COMPOSE=docker-compose-external.yml
 EXTERNAL_PATH="/media/mint/Worn out disk1/Documents/minor/erase_redundant"
 # login_script='file:///mnt/8cba077b-050c-47b9-9e82-8c8b0730ca1e/Documents/local_script/jellyfin_autologin.html'
-# initialize firefox so further calls don't fork processes
-nohup firefox -private-window >/dev/null 2>/dev/null &
+# initialize web browser so further calls don't fork processes
+nohup librewolf -private-window >/dev/null 2>/dev/null &
 
 cd $working_directory
 
@@ -50,8 +50,8 @@ do
         sleep 1
         if  curl -s $jellyfin_server_url --output /dev/null;
         then
-                # open invidious server in firefox
-                firefox -private-window $jellyfin_server_url >/dev/null 2>/dev/null
+                # open invidious server in web browser
+                xdg-open $jellyfin_server_url >/dev/null 2>/dev/null
                 
                 break
         fi

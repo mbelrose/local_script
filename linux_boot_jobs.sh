@@ -25,13 +25,13 @@ FALSE signal_messenger "Signal Messenger" \
 | read apps_to_run
 
 
-# run firefox
-nohup firefox \
+# preload web browser
+nohup librewolf \
     -private-window \
     >/dev/null 2>/dev/null &
 
 # run discord
-nohup firefox \
+nohup librewolf \
     -new-window https://discord.com/channels/@me \
     >/dev/null 2>/dev/null &
 
@@ -48,7 +48,7 @@ fi
 
 # run google voice
 if [[ $apps_to_run =~ google_voice ]]; then
-    nohup firefox \
+    nohup librewolf \
         -new-window https://voice.google.com/u/0/messages \
         >/dev/null 2>/dev/null &
 fi
