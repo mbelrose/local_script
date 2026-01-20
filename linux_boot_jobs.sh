@@ -26,13 +26,13 @@ FALSE signal_messenger "Signal Messenger" \
 
 
 # preload web browser
-nohup librewolf \
-    -private-window \
+nohup chromium \
+    --incognito \
     >/dev/null 2>/dev/null &
 
 # run discord
-nohup librewolf \
-    -new-window https://discord.com/channels/@me \
+nohup xdg-open \
+    https://discord.com/channels/@me \
     >/dev/null 2>/dev/null &
 
 # break reminder
@@ -48,8 +48,8 @@ fi
 
 # run google voice
 if [[ $apps_to_run =~ google_voice ]]; then
-    nohup librewolf \
-        -new-window https://voice.google.com/u/0/messages \
+    nohup xdg-open \
+        https://voice.google.com/u/0/messages \
         >/dev/null 2>/dev/null &
 fi
 

@@ -7,7 +7,7 @@ working_directory=$HOME/.local/opt/glance
 glance_server_url="http://127.0.0.1:9700/"
 
 # initialize web browser so further calls don't fork processes
-nohup librewolf -private-window >/dev/null 2>/dev/null &
+nohup chromium --incognito >/dev/null 2>/dev/null &
 
 cd $working_directory
 
@@ -43,7 +43,7 @@ do
         if  curl -s $glance_server_url --output /dev/null;
         then
                 # open invidious server in web browser
-                xdg-open $glance_server_url >/dev/null 2>/dev/null
+                chromium --incognito $glance_server_url >/dev/null 2>/dev/null
                 
                 break
         fi

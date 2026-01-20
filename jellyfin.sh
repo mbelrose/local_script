@@ -10,7 +10,7 @@ EXTERNAL_COMPOSE=docker-compose-external.yml
 EXTERNAL_PATH="/media/mint/Worn out disk1/Documents/minor/erase_redundant"
 # login_script='file:///mnt/8cba077b-050c-47b9-9e82-8c8b0730ca1e/Documents/local_script/jellyfin_autologin.html'
 # initialize web browser so further calls don't fork processes
-nohup librewolf -private-window >/dev/null 2>/dev/null &
+nohup chromium --incognito >/dev/null 2>/dev/null &
 
 cd $working_directory
 
@@ -51,7 +51,7 @@ do
         if  curl -s $jellyfin_server_url --output /dev/null;
         then
                 # open invidious server in web browser
-                xdg-open $jellyfin_server_url >/dev/null 2>/dev/null
+                chromium --incognito $jellyfin_server_url >/dev/null 2>/dev/null
                 
                 break
         fi
