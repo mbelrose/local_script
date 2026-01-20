@@ -86,11 +86,7 @@ move_window "Break Reminder" 1
 if [[ $apps_to_run =~ twitch_live_alert ]]; then
     move_window "Twitch Live Alert" 1
 fi
-if [[ $apps_to_run =~ google_voice ]]; then
-    move_window "Voice" 1
-fi
 
-move_window "Discord" 1
 move_window KeePassXC 1
 move_window "Joplin" 1
 
