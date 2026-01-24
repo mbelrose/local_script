@@ -31,7 +31,8 @@ nohup chromium \
     >/dev/null 2>/dev/null &
 
 # run discord
-nohup xdg-open \
+nohup chromium \
+    --new-window \
     https://discord.com/channels/@me \
     >/dev/null 2>/dev/null &
 
@@ -48,7 +49,8 @@ fi
 
 # run google voice
 if [[ $apps_to_run =~ google_voice ]]; then
-    nohup xdg-open \
+    nohup chromium \
+        --new-window \
         https://voice.google.com/u/0/messages \
         >/dev/null 2>/dev/null &
 fi
@@ -87,6 +89,11 @@ if [[ $apps_to_run =~ twitch_live_alert ]]; then
     move_window "Twitch Live Alert" 1
 fi
 
+if [[ $apps_to_run =~ google_voice ]]; then
+    move_window "Voice" 1
+fi
+
+move_window "Discord" 1 
 move_window KeePassXC 1
 move_window "Joplin" 1
 
