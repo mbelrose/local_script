@@ -31,9 +31,10 @@ nohup chromium \
     >/dev/null 2>/dev/null &
 
 # run discord
-nohup chromium \
-    --new-window \
-    https://discord.com/channels/@me \
+nohup /usr/bin/flatpak run \
+    --branch=stable --arch=x86_64 \
+    --command=com.discordapp.Discord \
+    --file-forwarding com.discordapp.Discord @@u %U @@ \
     >/dev/null 2>/dev/null &
 
 # break reminder
