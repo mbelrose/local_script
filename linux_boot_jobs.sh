@@ -66,7 +66,7 @@ fi
 
 # sync keepassxc database
 gnome-terminal --title "KeepassXC Sync" \
-    -- rclone sync --verbose $KEEPASSXC_LOCAL_PATH $KEEPASSXC_REMOTE_PATH
+    -- rclone copy --verbose $KEEPASSXC_LOCAL_PATH $KEEPASSXC_REMOTE_PATH
 
 # launch keepassxc
 nohup /usr/bin/flatpak \
