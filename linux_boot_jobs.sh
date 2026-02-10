@@ -21,7 +21,6 @@ zenity --list --checklist \
 --column=checkbox --column=number --column=label \
 TRUE twitch_live_alert "Twitch Live Alert" \
 TRUE google_voice "Google Voice" \
-FALSE signal_messenger "Signal Messenger" \
 | read apps_to_run
 
 
@@ -55,14 +54,6 @@ if [[ $apps_to_run =~ google_voice ]]; then
         https://voice.google.com/u/0/messages \
         >/dev/null 2>/dev/null &
 fi
-
-# run Signal messenger
-if [[ $apps_to_run =~ signal_messenger ]]; then
-    nohup /opt/Signal/signal-desktop \
-        --no-sandbox %U \
-        >/dev/null 2>/dev/null &
-fi
-
 
 # sync keepassxc database
 gnome-terminal --title "KeepassXC Sync" \
