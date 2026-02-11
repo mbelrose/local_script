@@ -61,7 +61,7 @@ if [[ $apps_to_run =~ signal_messenger ]]; then
     nohup /usr/bin/flatpak \
         run --branch=stable --arch=x86_64 \
         --command=signal-desktop \
-        --file-forwarding org.signal.Signal @@u %U @@
+        --file-forwarding org.signal.Signal @@u %U @@ \
         >/dev/null 2>/dev/null &
 fi
 
